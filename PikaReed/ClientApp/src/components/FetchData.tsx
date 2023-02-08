@@ -1,18 +1,14 @@
-import React, {Component} from "react";
+import React, {Component, ReactElement, ReactPropTypes} from "react";
 
 export class FetchData extends Component {
     static displayName = FetchData.name;
 
-    constructor(props) {
+    constructor(props: ReactPropTypes) {
         super(props);
         this.state = {forecasts: [], loading: true};
     }
 
-    componentDidMount() {
-        this.populateWeatherData();
-    }
-
-    static renderForecastsTable(forecasts) {
+    static renderForecastsTable(forecasts: any): ReactElement {
         return (
             <table className="table table-striped" aria-labelledby="tabelLabel">
                 <thead>
@@ -24,7 +20,7 @@ export class FetchData extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {forecasts.map(forecast => <tr key={forecast.date}>
+                    {forecasts.map((forecast: any) => <tr key={forecast.date}>
                         <td>{forecast.date}</td>
                         <td>{forecast.temperatureC}</td>
                         <td>{forecast.temperatureF}</td>
@@ -33,6 +29,10 @@ export class FetchData extends Component {
                 </tbody>
             </table>
         );
+    }
+
+    componentDidMount() {
+        this.populateWeatherData();
     }
 
     render() {
