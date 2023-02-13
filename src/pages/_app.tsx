@@ -3,9 +3,12 @@ import "@/styles/globals.css";
 import type {AppProps} from "next/app";
 import type {ReactElement} from "react";
 import {DataSource} from "@/data-source";
+import Layout from "@/components/layout";
 
-DataSource.initialize();
+// DataSource.initialize();
 
 export default function App({Component, pageProps}: AppProps): ReactElement {
-    return <Component {...pageProps} />;
+    return <Layout>
+        <Component {...pageProps} />
+    </Layout>;
 }
