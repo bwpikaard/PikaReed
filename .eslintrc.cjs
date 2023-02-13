@@ -199,7 +199,7 @@ module.exports = {
         }],
         "keyword-spacing": "off",                                                  /* ( f) enforce consistent spacing before and after keywords */ // Disabled in favor of typescript-eslint rule below
         "line-comment-position": "off",                                            /* (  ) enforce position of line comments */
-        "linebreak-style": ["error", "windows"],                                   /* ( f) enforce consistent linebreak style */
+        "linebreak-style": ["error", "unix"],                                   /* ( f) enforce consistent linebreak style */
         "lines-around-comment": "off",                                             /* ( f) require empty lines around comments */
         "lines-between-class-members": "off",                                      /* ( f) require or disallow an empty line between class members */ // Disabled in favor of typescript-eslint rule below
         "max-depth": "off",                                                        /* (  ) enforce a maximum depth that blocks can be nested */

@@ -1,16 +1,11 @@
-import Image from "next/image";
-import {Inter} from "@next/font/google";
-import styles from "./page.module.css";
 import type {ReactElement} from "react";
-
-const inter = Inter({subsets: ["latin"] });
 
 export default function About(): ReactElement {
     return (
         <div>
             <div id="default-carousel" className="relative" data-carousel="static">
                 {
-                //<!-- Carousel wrapper -->
+                // <!-- Carousel wrapper -->
                 }
                 <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
                     <div className="hidden duration-700 ease-in-out" data-carousel-item>
@@ -22,7 +17,7 @@ export default function About(): ReactElement {
                     </div>
                 </div>
                 {
-                //<!-- Slider indicators -->
+                // <!-- Slider indicators -->
                 }
                 
                 <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
@@ -31,7 +26,7 @@ export default function About(): ReactElement {
                     <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
                 </div>
                 {
-                //<!-- Slider controls -->
+                // <!-- Slider controls -->
                 }
                 
                 <button type="button" className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
