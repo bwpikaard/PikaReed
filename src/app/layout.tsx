@@ -1,7 +1,12 @@
+// Addresses flushSync error from 'react-dom'
+"use client";
+
 import type {ReactElement, ReactNode} from "react";
 import "./globals.css";
 import NavBar from "./navbar"
 import Footer from "./footer"
+import 'flowbite-react'
+import 'flowbite'
 
 export default function RootLayout({
     children,
