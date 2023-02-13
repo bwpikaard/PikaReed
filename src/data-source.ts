@@ -12,3 +12,10 @@ export const DataSource = new ORMDataSource({
     migrationsTableName: "migrations",
     migrations: ["migrations/*.ts"],
 });
+
+export async function ReadyDataSource(): Promise<ORMDataSource> {
+    if (DataSource.isInitialized) return DataSource;
+
+    await DataSource.initialize();
+    return DataSource;
+}
