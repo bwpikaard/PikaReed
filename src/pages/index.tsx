@@ -1,6 +1,6 @@
 import type {ReactElement} from "react";
 
-export default function About(): ReactElement {
+export default function Home(): ReactElement {
     return (
         <div>
             <div id="default-carousel" className="relative" data-carousel="static">

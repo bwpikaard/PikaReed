@@ -14,6 +14,7 @@ export default async function handler(
     const ds = await ReadyDataSource();
     const userRepos = ds.getRepository(User);
     const user = await userRepos.findOneOrFail({where: {id: 2} });
+    // eslint-disable-next-line no-console
     console.log(user);
 
     res.status(200).json({name: "John Doe"});
