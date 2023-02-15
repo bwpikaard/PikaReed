@@ -32,20 +32,17 @@ export default function NavBar(): ReactElement {
                     >
                         <Dropdown.Header>
                             <span className="block text-sm">
-                                Bonnie Green
-                            </span>
-                            <span className="block truncate text-sm font-medium">
-                                name@flowbite.com
+                                Username
                             </span>
                         </Dropdown.Header>
                         <Dropdown.Item>
-                            Dashboard
+                            Profile
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                            Bookshelf
                         </Dropdown.Item>
                         <Dropdown.Item>
                             Settings
-                        </Dropdown.Item>
-                        <Dropdown.Item>
-                            Earnings
                         </Dropdown.Item>
                         <Dropdown.Divider />
                         <Dropdown.Item>
@@ -60,11 +57,20 @@ export default function NavBar(): ReactElement {
                         Home
                         </Navbar.Link>
                     </Link>
-                    <Link href="/test" passHref legacyBehavior>
-                        <Navbar.Link>
-                        Explore
-                        </Navbar.Link>
-                    </Link>
+                    <Dropdown
+                        label="Explore"
+                        inline={true}
+                    >
+                        <Dropdown.Item>
+                            Top Ranked
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                            Library
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                            Random
+                        </Dropdown.Item>
+                    </Dropdown>
                     <Link href="/test" passHref legacyBehavior>
                         <Navbar.Link>
                         Write

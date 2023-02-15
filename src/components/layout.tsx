@@ -1,6 +1,6 @@
 import type {ReactElement, ReactNode} from "react";
 import NavBar from "./navbar";
-import Footer from "./footer";
+import FooterBar from "./footer";
 
 export default function Layout({
     children,
@@ -13,7 +13,7 @@ export default function Layout({
             <div className="container mx-auto">
                 {children}
             </div>
-            <Footer />
+            <FooterBar />
         </main>
     );
 }
