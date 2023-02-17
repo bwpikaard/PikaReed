@@ -6,9 +6,12 @@ import type {ReactElement} from "react";
 export default function FooterBar(): ReactElement {
     return (
         <>
-            <Footer container={true}>
+            <Footer
+                container={true}
+                className="pt-10 mt-auto"
+            >
                 <Footer.Copyright
-                    href="#"
+                    href="/"
                     by="PikaReed™"
                     year={2023} />
                 <Footer.LinkGroup>
