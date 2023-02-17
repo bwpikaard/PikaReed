@@ -1,0 +1,101 @@
+﻿PikaReed Requirements
+
+
+Team members
+Bryan Pikaard & Calab Reeder
+
+
+Purpose
+To provide a space for new writers to write and display their work.
+
+
+Requirements
+
+1. 
+Name: user_registration
+Type: functional
+Summary: A user should be able to use their email and a chosen password to create an account on the website.
+
+
+2. 
+Name: user_login
+Type: functional
+Summary: A user should be able to enter their email and a case sensitive password to login to their account on the website.
+
+
+3. 
+Name: write_chapter
+Type: functional
+Summary: Users should be able to write a chapter inside of an editor located in the browser.
+
+
+4. 
+Name: chapter_comments
+Type: functional
+Summary: Users will be able to leave comments on a novel’s chapter
+
+
+5. 
+Name: chapter_corrections
+Type: functional
+Summary: Users can leave corrections inside the chapter which the author can then use to better their work.
+
+
+6. 
+Name: content_moderation
+Type: functional
+Summary: A moderation team has the ability to approve content from new users, and to allow new user content to be displayed on the PikaReed platform.
+
+
+7. 
+Name: public_library
+Type: functional
+Summary: A page dedicated to displaying the available novels on the website.
+
+
+8. 
+Name: user_library
+Type: functional
+Summary: Alternately known as the ‘bookshelf’, the user library will contain all the books a particular user is actively reading or following.
+
+
+9. 
+Name: user_library_bookmarks
+Type: functional
+Summary: For each novel in the user’s library, a bookmark can be used to keep track of which chapter the user is currently reading.
+
+
+10. 
+Name: novel_review
+Type: functional
+Summary: A review can be given on the novel homepage
+
+
+11. 
+Name: novel_rating
+Type: functional
+Summary: A rating can be given on the novel homepage
+
+
+12. 
+Name: weekly_top_ranking
+Type: functional
+Summary: Users can view a list of top-rated, most read, newest, etc… content.
+
+
+13. 
+Name: platform_feedback
+Type: functional
+Summary: Users can submit feedback on where the website can be improved.
+
+
+14. 
+Name: supported_browsers
+Type: constraint
+Summary: Any browser will work as long as it has JavaScript enabled.
+
+
+15. 
+Name: trusted_users
+Type: risk
+Summary: Trusted users will be able to post content with little to no moderation, and they will be able to proofread new content before it is displayed to the public.
