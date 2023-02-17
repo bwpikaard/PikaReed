@@ -11,7 +11,13 @@ module.exports = {
         "next/core-web-vitals",
         "plugin:@typescript-eslint/recommended",
     ],
+    plugins: [
+        "@typescript-eslint",
+        "simple-import-sort",
+    ],
     rules: {
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
         "for-direction": "error",                                                  /* (r ) enforce "for" loop update clause moving the counter in the right direction. */
         "getter-return": "error",                                                  /* (r ) enforce `return` statements in getters */
         "no-async-promise-executor": "error",                                      /* (r ) disallow using an async function as a Promise executor */
