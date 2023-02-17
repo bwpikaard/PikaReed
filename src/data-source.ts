@@ -2,11 +2,11 @@ import {DataSource as ORMDataSource} from "typeorm";
 
 export const DataSource = new ORMDataSource({
     type: "postgres",
-    host: "localhost",
+    host: process.env.DB_HOST,
     port: 5432,
-    username: "postgres",
-    password: "password",
-    database: "pikareed",
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
     schema: "public",
     entities: ["src/entities/*.entity.ts"],
     migrationsTableName: "migrations",

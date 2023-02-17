@@ -84,7 +84,7 @@ export default function Navbar(): ReactElement {
                                 placement={"bottom-end"}
                                 dismissOnClick
                                 label={<>
-                                    <p className="block mr-2 py-2 pr-4 pl-3 md:p-0 text-gray-700 ">Bryan Pikaard</p>
+                                    <p className="block mr-2 py-2 pr-4 pl-3 md:p-0 text-gray-700 ">{session.user.displayName}</p>
                                     <Avatar alt="User settings" img="/no-pfp.ico" rounded={true}/>
                                 </>}
                             >
