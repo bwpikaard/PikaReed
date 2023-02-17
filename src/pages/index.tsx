@@ -1,7 +1,7 @@
-import Image from "next/image";
 import {
     Carousel, Table,
 } from "flowbite-react";
+import Image from "next/image";
 import type {ReactElement} from "react";
 
 export default function Home(): ReactElement {
