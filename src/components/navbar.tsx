@@ -11,14 +11,15 @@ export default function NavBar(): ReactElement {
             <Navbar
                 fluid={true}
                 rounded={true}
+                className="pb-10"
             >
-                <Navbar.Brand href="https://flowbite.com/">
+                <Navbar.Brand href="/">
                     <Image
-                        src="https://flowbite.com/docs/images/logo.svg"
+                        src="/pikareed-logo.ico"
                         className="mr-3 h-6 sm:h-9"
-                        alt="Flowbite Logo"
+                        alt="PikaReed Logo"
                         height="36"
-                        width="36"
+                        width="24"
                     />
                     <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
                         PikaReed
@@ -28,24 +29,27 @@ export default function NavBar(): ReactElement {
                     <Dropdown
                         arrowIcon={false}
                         inline={true}
-                        label={<Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded={true}/>}
+                        label={<Avatar alt="User settings" img="/no-pfp.ico" rounded={true}/>}
                     >
                         <Dropdown.Header>
                             <span className="block text-sm">
-                                Bonnie Green
-                            </span>
-                            <span className="block truncate text-sm font-medium">
-                                name@flowbite.com
+                                Username
                             </span>
                         </Dropdown.Header>
                         <Dropdown.Item>
-                            Dashboard
+                            <Link href="/profile">
+                                Profile
+                            </Link>
                         </Dropdown.Item>
                         <Dropdown.Item>
-                            Settings
+                            <Link href="/bookshelf">
+                                Bookshelf
+                            </Link>
                         </Dropdown.Item>
                         <Dropdown.Item>
-                            Earnings
+                            <Link href="/settings">
+                                Settings
+                            </Link>
                         </Dropdown.Item>
                         <Dropdown.Divider />
                         <Dropdown.Item>
@@ -60,22 +64,35 @@ export default function NavBar(): ReactElement {
                         Home
                         </Navbar.Link>
                     </Link>
-                    <Link href="/test" passHref legacyBehavior>
-                        <Navbar.Link>
-                        Explore
-                        </Navbar.Link>
-                    </Link>
-                    <Link href="/test" passHref legacyBehavior>
+                    <Dropdown
+                        label="Explore"
+                        inline={true}
+                    >
+                        <Dropdown.Item>
+                            <Link href="/top-ranked">
+                            Top Ranked
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                            <Link href="/library">
+                            Library
+                            </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                            Random
+                        </Dropdown.Item>
+                    </Dropdown>
+                    <Link href="/write" passHref legacyBehavior>
                         <Navbar.Link>
                         Write
                         </Navbar.Link>
                     </Link>
-                    <Link href="/test" passHref legacyBehavior>
+                    <Link href="/resources" passHref legacyBehavior>
                         <Navbar.Link>
                         Resources
                         </Navbar.Link>
                     </Link>
-                    <Link href="/test" passHref legacyBehavior>
+                    <Link href="/" passHref legacyBehavior>
                         <Navbar.Link>
                         Feedback
                         </Navbar.Link>
