@@ -9,11 +9,11 @@ export default function Layout({
 }): ReactElement {
     return (
         <main>
-            <NavBar />
-            <div className="container mx-auto">
+            <div className="container mx-auto flex flex-col min-h-screen">
+                <NavBar />
                 {children}
+                <FooterBar />
             </div>
-            <FooterBar />
         </main>
     );
 }
