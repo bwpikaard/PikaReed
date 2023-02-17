@@ -1,7 +1,7 @@
 import type {ReactElement, ReactNode} from "react";
 
 import Footer from "./footer";
-import Navbar from "./navbar";
+import NavBar from "./navbar";
 
 export default function Layout({
     children,
@@ -10,7 +10,7 @@ export default function Layout({
 }): ReactElement {
     return (
         <main>
-            <Navbar />
+            <NavBar />
             <div className="container mx-auto flex flex-col min-h-screen">
                 {children}
             </div>

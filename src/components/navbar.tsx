@@ -9,8 +9,7 @@ export default function Navbar(): ReactElement {
     return (
         <FlowbiteNavbar
             fluid={true}
-            rounded={true}
-            className="pb-10"
+            className="mb-10"
         >
             <FlowbiteNavbar.Brand href="/">
                 <Image
