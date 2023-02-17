@@ -1,7 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import type {NextApiRequest, NextApiResponse} from "next";
+
 import {ReadyDataSource} from "@/data-source";
 import {User} from "@/entities/user.entity";
-import type {NextApiRequest, NextApiResponse} from "next";
 
 interface Data {
     name: string;

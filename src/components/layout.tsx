@@ -1,6 +1,7 @@
 import type {ReactElement, ReactNode} from "react";
-import NavBar from "./navbar";
+
 import Footer from "./footer";
+import NavBar from "./navbar";
 
 export default function Layout({
     children,

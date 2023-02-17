@@ -1,9 +1,9 @@
-import Image from "next/image";
-import type {ReactElement} from "react";
 import {
     Avatar, Dropdown, Navbar,
 } from "flowbite-react";
+import Image from "next/image";
 import Link from "next/link";
+import type {ReactElement} from "react";
 
 export default function NavBar(): ReactElement {
     return (
