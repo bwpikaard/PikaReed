@@ -24,6 +24,7 @@ export default NextAuth({
                     const credentialsUser = await userRepository.findOne({
                         where: {email: credentials.username},
                         select: {
+                            id: true,
                             password: true,
                         },
                     });
