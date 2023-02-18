@@ -2,7 +2,6 @@ import type {ReactElement, ReactNode} from "react";
 
 import Footer from "./footer";
 import NavBar from "./navbar";
-import Scripts from "./script";
 
 export default function Layout({
     children,
@@ -16,7 +15,6 @@ export default function Layout({
                 {children}
             </div>
             <Footer />
-            <Scripts />
         </main>
     );
 }
