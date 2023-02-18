@@ -18,4 +18,7 @@ export class User extends BaseEntity {
 
     @Column({select: false})
     password: string;
+
+    @Column({nullable: true})
+    avatarUrl?: string;
 }

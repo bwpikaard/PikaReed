@@ -14,47 +14,47 @@ export default function Navbar(): ReactElement {
     const navbarCollapse = <FlowbiteNavbar.Collapse>
         <Link href="/" passHref legacyBehavior>
             <FlowbiteNavbar.Link>
-            Home
+                {"Home"}
             </FlowbiteNavbar.Link>
         </Link>
         <Dropdown
             label={<FlowbiteNavbar.Link>
-                Explore
+                {"Explore"}
             </FlowbiteNavbar.Link>}
             inline={true}
         >
             <Dropdown.Item>
                 <Link href="/top-ranked">
-                Top Ranked
+                    {"Top Ranked"}
                 </Link>
             </Dropdown.Item>
             <Dropdown.Item>
                 <Link href="/library">
-                Library
+                    {"Library"}
                 </Link>
             </Dropdown.Item>
             <Dropdown.Item>
-                Random
+                {"Random"}
             </Dropdown.Item>
         </Dropdown>
         <Link href="/write" passHref legacyBehavior>
             <FlowbiteNavbar.Link>
-            Write
+                {"Write"}
             </FlowbiteNavbar.Link>
         </Link>
         <Link href="/resources" passHref legacyBehavior>
             <FlowbiteNavbar.Link>
-            Resources
+                {"Resources"}
             </FlowbiteNavbar.Link>
         </Link>
         <Link href="/" passHref legacyBehavior>
             <FlowbiteNavbar.Link>
-            Feedback
+                {"Feedback"}
             </FlowbiteNavbar.Link>
         </Link>
         {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
         {!session?.user && <FlowbiteNavbar.Link onClick={async (): Promise<void> => signIn()} href="#">
-                Sign In
+            {"Sign In"}
         </FlowbiteNavbar.Link>}
     </FlowbiteNavbar.Collapse>;
 
@@ -72,7 +72,7 @@ export default function Navbar(): ReactElement {
                     width="24"
                 />
                 <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-                    PikaReed
+                    {"PikaReed"}
                 </span>
             </FlowbiteNavbar.Brand>
             {session?.user
@@ -84,34 +84,34 @@ export default function Navbar(): ReactElement {
                                 placement={"bottom-end"}
                                 dismissOnClick
                                 label={<>
-                                    <p className="block mr-2 py-2 pr-4 pl-3 md:p-0 text-gray-700 ">{session.user.displayName}</p>
-                                    <Avatar alt="User settings" img="/no-pfp.ico" rounded={true}/>
+                                    <p className="block mr-2 py-2 pr-4 pl-3 md:p-0 text-gray-700 ">{session.user.name}</p>
+                                    <Avatar alt="User settings" img={session.user.image ?? "/no-pfp.ico"} rounded={true}/>
                                 </>}
                             >
                                 <Dropdown.Header>
                                     <span className="block text-sm">
-                                        Username
+                                        {session.user.name}
                                     </span>
                                 </Dropdown.Header>
                                 <Dropdown.Item>
                                     <Link href="/profile">
-                                        Profile
+                                        {"Profile"}
                                     </Link>
                                 </Dropdown.Item>
                                 <Dropdown.Item>
                                     <Link href="/bookshelf">
-                                Bookshelf
+                                        {"Bookshelf"}
                                     </Link>
                                 </Dropdown.Item>
                                 <Dropdown.Item>
                                     <Link href="/settings">
-                                        Settings
+                                        {"Settings"}
                                     </Link>
                                 </Dropdown.Item>
                                 <Dropdown.Divider />
                                 {/* eslint-disable-next-line @typescript-eslint/explicit-function-return-type, @typescript-eslint/no-misused-promises */}
                                 <Dropdown.Item onClick={async () => signOut()}>
-                                    Sign out
+                                    {"Sign out"}
                                 </Dropdown.Item>
                             </Dropdown>}
                             <FlowbiteNavbar.Toggle />
