@@ -1,13 +1,13 @@
 {
     "compilerOptions": {
-        "module": "esnext",
+        "module": "commonjs",
         "target": "es2020",
         "lib": [
-            "dom",
-            "dom.iterable",
             "esnext",
             "es2020",
-            "esnext.asynciterable"
+            "esnext.asynciterable",
+            "dom",
+            "dom.iterable"
         ],
         "noImplicitAny": false,
         "emitDecoratorMetadata": true,
@@ -43,7 +43,8 @@
         "src/**/*.ts",
         "src/**/*.tsx",
         "types/**/*.ts",
-        "tailwind.config.ts"
+        "tailwind.config.ts",
+        "ormconfig.cjs"
     ],
     "exclude": [
         "node_modules"

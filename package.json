@@ -6,13 +6,15 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "migration:generate": "typeorm-ts-node-esm migration:generate -d ormconfig.cjs ./migrations/Automigration",
+        "migration:run": "typeorm-ts-node-esm migration:run -d ormconfig.cjs",
+        "migration:revert": "typeorm-ts-node-esm migration:revert -d ormconfig.cjs"
     },
     "dependencies": {
         "@next/font": "13.1.6",
-        "@types/node": "18.13.0",
-        "@types/react-dom": "18.0.10",
         "bcrypt": "^5.1.0",
+        "config": "^3.3.9",
         "eslint": "8.33.0",
         "eslint-config-next": "13.1.6",
         "flowbite": "^1.6.3",
@@ -28,12 +30,16 @@
     },
     "devDependencies": {
         "@types/bcrypt": "^5.0.0",
+        "@types/config": "^3.3.0",
+        "@types/node": "18.13.0",
+        "@types/react-dom": "18.0.10",
         "@types/react": "^18.0.27",
         "@typescript-eslint/eslint-plugin": "^5.51.0",
         "@typescript-eslint/parser": "^5.51.0",
         "autoprefixer": "^10.4.13",
         "eslint-plugin-simple-import-sort": "^10.0.0",
         "postcss": "^8.4.21",
-        "tailwindcss": "^3.2.6"
+        "tailwindcss": "^3.2.6",
+        "ts-node": "^10.9.1"
     }
 }
