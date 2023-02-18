@@ -1,16 +1,17 @@
+import config from "config";
 import {DataSource as ORMDataSource} from "typeorm";
+
+import {User} from "./entities/user.entity";
 
 export const DataSource = new ORMDataSource({
     type: "postgres",
-    host: process.env.DB_HOST,
-    port: 5432,
-    username: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE,
+    host: config.get("database.host"),
+    port: config.get("database.port"),
+    username: config.get("database.username"),
+    password: config.get("database.password"),
+    database: config.get("database.database"),
     schema: "public",
-    entities: ["src/entities/*.entity.ts"],
-    migrationsTableName: "migrations",
-    migrations: ["migrations/*.ts"],
+    entities: [User],
 });
 
 export async function ReadyDataSource(): Promise<ORMDataSource> {

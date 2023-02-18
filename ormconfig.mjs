@@ -1,5 +1,5 @@
-import { DataSource } from "typeorm";
 import config from "config";
+import { DataSource } from "typeorm";
 
 export default new DataSource({
     type: "postgres",
@@ -12,4 +12,4 @@ export default new DataSource({
     entities: ["src/entities/**/*.entity.ts"],
     migrationsTableName: "migrations",
     migrations: ["migrations/*.ts"],
-})
+});;
