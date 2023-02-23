@@ -1,6 +1,12 @@
 import Link from "next/link";
 import type {ReactElement} from "react";
 
+import About from "../pages/footer-modals/about";
+import Contact from "../pages/footer-modals/contact";
+import Liscensing from "../pages/footer-modals/liscensing";
+import PrivacyPolicy from "../pages/footer-modals/privacy-policy";
+import Modal from "./modal";
+
 export default function Footer(): ReactElement {
     return (
         <footer className="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 mt-2">
@@ -8,16 +14,24 @@ export default function Footer(): ReactElement {
             </span>
             <ul className="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
                 <li>
-                    <a href="#" className="mr-4 hover:underline md:mr-6 ">About</a>
+                    <div className="mr-4 md:mr-6">
+                        <Modal displayName="About"><About /></Modal>
+                    </div>
                 </li>
                 <li>
-                    <a href="#" className="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                    <div className="mr-4 md:mr-6">
+                        <Modal displayName="Privacy Policy"><PrivacyPolicy /></Modal>
+                    </div>
                 </li>
                 <li>
-                    <a href="#" className="mr-4 hover:underline md:mr-6">Licensing</a>
+                    <div className="mr-4 md:mr-6">
+                        <Modal displayName="Liscensing"><Liscensing /></Modal>
+                    </div>
                 </li>
                 <li>
-                    <a href="#" className="hover:underline">Contact</a>
+                    <div className="mr-4 md:mr-6">
+                        <Modal displayName="Contact"><Contact /></Modal>
+                    </div>
                 </li>
             </ul>
         </footer>
