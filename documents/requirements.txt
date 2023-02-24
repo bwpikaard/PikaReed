@@ -24,78 +24,126 @@ Summary: A user should be able to enter their email and a case sensitive passwor
 
 
 3. 
+Name: reset_password
+Type: functional
+Summary: If a user forgets their password, they can request to change it via email
+
+
+4.
+Name: change_password
+Type: funcational
+Summary: Allows users to change their password if they still know their current password.
+
+
+5.
+Name: change_email
+Type: functional
+Summary: A user may change their current email to another. An email change request will be sent to the previous email for confirmation.
+
+
+6.
+Name: change_avatar
+Type: functional
+Summary: A user may change their profile picture
+
+
+7.
+Name: writer_resources
+Type: functional
+Summary: A page of links and additional resources to help writers with their writing skills and grammar will be provided.
+
+
+8. 
 Name: write_chapter
 Type: functional
 Summary: Users should be able to write a chapter inside of an editor located in the browser.
 
 
-4. 
+9. 
 Name: chapter_comments
 Type: functional
 Summary: Users will be able to leave comments on a novel’s chapter
 
 
-5. 
+10. 
 Name: chapter_corrections
 Type: functional
 Summary: Users can leave corrections inside the chapter which the author can then use to better their work.
 
 
-6. 
+11. 
 Name: content_moderation
 Type: functional
 Summary: A moderation team has the ability to approve content from new users, and to allow new user content to be displayed on the PikaReed platform.
 
 
-7. 
+12. 
 Name: public_library
 Type: functional
 Summary: A page dedicated to displaying the available novels on the website.
 
 
-8. 
+13. 
 Name: user_library
 Type: functional
 Summary: Alternately known as the ‘bookshelf’, the user library will contain all the books a particular user is actively reading or following.
 
 
-9. 
+14. 
 Name: user_library_bookmarks
 Type: functional
 Summary: For each novel in the user’s library, a bookmark can be used to keep track of which chapter the user is currently reading.
 
 
-10. 
+15. 
 Name: novel_review
 Type: functional
 Summary: A review can be given on the novel homepage
 
 
-11. 
+16. 
 Name: novel_rating
 Type: functional
 Summary: A rating can be given on the novel homepage
 
 
-12. 
+17. 
 Name: weekly_top_ranking
 Type: functional
 Summary: Users can view a list of top-rated, most read, newest, etc… content.
 
 
-13. 
+18.
+Name: random_novel
+Type: functional
+Summary: If users do not know what they want to read, they can click the random novel button to be given a randomly selected novel from the site.
+
+
+19. 
 Name: platform_feedback
 Type: functional
 Summary: Users can submit feedback on where the website can be improved.
 
 
-14. 
+20. 
 Name: supported_browsers
 Type: constraint
 Summary: Any browser will work as long as it has JavaScript enabled.
 
 
-15. 
+21.
+Name: backend_os
+Type: constraint
+Summary: API needs to run on a debian based platform
+
+
+22. 
 Name: trusted_users
 Type: risk
 Summary: Trusted users will be able to post content with little to no moderation, and they will be able to proofread new content before it is displayed to the public.
+
+
+23.
+Name: password_encryption
+Type: risk
+Summary: Passwords will be encrypted with a bcrpyt hash
