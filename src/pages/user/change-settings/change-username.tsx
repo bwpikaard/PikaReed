@@ -1,6 +1,6 @@
 import type {ReactElement} from "react";
 
-export default function ChangeAvatar(): ReactElement {
+export default function ChangeUsername(): ReactElement {
     return (
         <>
             <div className="mb-6">
