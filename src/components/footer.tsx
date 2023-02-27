@@ -1,10 +1,10 @@
 import Link from "next/link";
 import type {ReactElement} from "react";
 
-import About from "../pages/footer-modals/about";
-import Contact from "../pages/footer-modals/contact";
-import Liscensing from "../pages/footer-modals/liscensing";
-import PrivacyPolicy from "../pages/footer-modals/privacy-policy";
+import About from "../pages/about";
+import Contact from "./footer-modals/contact";
+import Liscensing from "./footer-modals/liscensing";
+import PrivacyPolicy from "./footer-modals/privacy-policy";
 import Modal from "./modal";
 
 export default function Footer(): ReactElement {
@@ -15,7 +15,7 @@ export default function Footer(): ReactElement {
             <ul className="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
                 <li>
                     <div className="mr-4 md:mr-6">
-                        <Modal displayName="About"><About /></Modal>
+                        <Link href="/about" className="">About</Link>
                     </div>
                 </li>
                 <li>
