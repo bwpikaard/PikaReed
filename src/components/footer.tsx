@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type {ReactElement} from "react";
 
-import About from "../pages/about";
 import Contact from "./footer-modals/contact";
 import Liscensing from "./footer-modals/liscensing";
 import PrivacyPolicy from "./footer-modals/privacy-policy";
