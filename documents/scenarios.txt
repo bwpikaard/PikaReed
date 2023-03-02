@@ -1,1 +1,37 @@
+Scenarios
 
+1. Users can read a novel
+  If the user does not already have a novel to read in mind they have several choices, all of which are listed under the explore
+  dropdown located in the navbar. The first choice is the 'top-rated' button which consists of the most well received novels on the 
+  website. The user can sort through novels by most viewed, most followed, highest rated, etc... The second choice for a user
+  looking for something to read, is the 'library' button. The library consists of every novel stored in the website's database
+  and a user will be able to navigate through these novels using pagination buttons at the bottom right of the screen. The last
+  option in the explore dropdown is the 'random' button. This button will pull a random novel from the database, the user can
+  continually use the random button until a suitable novel is found.
+
+2. Users can write a novel
+  To begin writing a novel, the user can click the 'write' button located in the middle of the navbar. After clicking write, the
+  user will be redirected to their personal novel page which will display all of their currently created novels. In order to proceed,
+  the user will need to click on a novel for which to write to, or in the case the user has yet to create a novel, they will need to
+  press the create novel button. The process of creating a novel will include, giving the novel a title (required), several
+  tags (optional), a description (optional), and a novel cover (optional). Once the user is finished filling out the novel's information,
+  they will press the 'create' button, finalizing the creation of their novel. Now that the user has a novel to write to, they can once again
+  click the 'write' button, and then click the novel they have just created in their personal novel page. The user will be redirected one
+  final time to a text editor that consists of a chapter title, and chapter contents. Once the user is satisfied with whatever they have written
+  in the chapter contents, they can press submit and the chapter will be posted to their novel.
+  
+3. Users can conversate at the end of a chapter in the comments section
+
+4. Users can give feedback on a chapter, feedback similar to turnit in or google notes
+
+5. Users can give a review of a novel, and leave a rating
+
+6. Users can provide feedback to the website, whether that be for improvements or finding bugs
+
+7. Users can look through the provided resources to better their writing
+
+8. New writers can get their novel displayed on the front page carousel
+
+9. Trusted users can be given more authority
+
+10. A select number of the trusted users will have even more authority
