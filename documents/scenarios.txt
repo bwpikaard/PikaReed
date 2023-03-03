@@ -7,7 +7,9 @@ Scenarios
   looking for something to read, is the 'library' button. The library consists of every novel stored in the website's database
   and a user will be able to navigate through these novels using pagination buttons at the bottom right of the screen. The last
   option in the explore dropdown is the 'random' button. This button will pull a random novel from the database, the user can
-  continually use the random button until a suitable novel is found.
+  continually use the random button until a suitable novel is found. If a user does have a novel in mind, they can enter the 
+  novel title in the search bar in the top right of the screen. After clicking enter, the user will be redirected to a list of
+  novels that have a similar title to the one the user entered, the user can then click the correct novel and then begin reading.
 
 2. Users can write a novel
   To begin writing a novel, the user can click the 'write' button located in the middle of the navbar. After clicking write, the
@@ -20,18 +22,36 @@ Scenarios
   final time to a text editor that consists of a chapter title, and chapter contents. Once the user is satisfied with whatever they have written
   in the chapter contents, they can press submit and the chapter will be posted to their novel.
   
-3. Users can conversate at the end of a chapter in the comments section
+3. Users can conversate in the comments section
+  At the end of each chapter will be a comments section. Users will be able to fill out a text area input box with whatever they wish to talk about, whether
+  that be about the chapter they have just finished reading, or in response to other user comments. For each comment, other users will have the option
+  to 'reply', which will create a child comment on the parent comment. For this reason, users will be able to view and revist their own comments by
+  clicking their profile icon, then pressing the 'profile' button, and finally navigating to the 'comments' section in their profile. This section
+  will display all of the users comments by date, newest to oldest, and clicking on a comment will redirect the user to the chapter they commented on.
+  
+4. Trusted users' abilities
+  
+5. A select number of the trusted users will have even more authority
+  
+6. Trusted users can give corrections on a chapter
+  
+7. Users can give a review and rating of a novel
+  After reading several chapters of a novel, users will have the option to give a review and rate the novel. In order to do this, users will need to
+  navigate to the novel's homepage. The process of rating a novel is simple, as there will be five transparent stars at the top of the page near
+  the novel title that the user can click to rate the novel. Scrolling to the bottom of the novel homepage, a user will see the review section. At the top of
+  the review section will be an input form requiring a review title and review content. After filling out the required information, the user will click
+  submit and their review will be posted in the review section of that novel. 
 
-4. Users can give feedback on a chapter, feedback similar to turnit in or google notes
+8. Users can provide feedback to the website
+  Located in the navbar at the top of the screen will be a feedback button that will allow users to contact staff if needed. Some reasons to contact staff
+  include: bugs, locked out of an account, another user claiming a novel is theirs when it is not, and users can also inform staff on where the website can
+  be improved. The structure of the feedback form will be: a section for the user to put their email so that staff can contact the user even if they are 
+  locked out of an account, a subject area so whoever is reading the feedback report will understand it more clearly, and finally there will be a content
+  section for the user to describe the problem more clearly. Some users who are bored can use this by searching the website for bugs in order to shame the 
+  two developers, or users can suggest features to make the developers lose more sleep.
 
-5. Users can give a review of a novel, and leave a rating
+9. Users can look through the provided resources to better their writing
 
-6. Users can provide feedback to the website, whether that be for improvements or finding bugs
+10. New writers can get their novel displayed on the front page carousel
 
-7. Users can look through the provided resources to better their writing
 
-8. New writers can get their novel displayed on the front page carousel
-
-9. Trusted users can be given more authority
-
-10. A select number of the trusted users will have even more authority
