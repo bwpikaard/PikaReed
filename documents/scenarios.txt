@@ -1,57 +1,32 @@
 Scenarios
 
 1. Users can read a novel
-  If the user does not already have a novel to read in mind they have several choices, all of which are listed under the explore
-  dropdown located in the navbar. The first choice is the 'top-rated' button which consists of the most well received novels on the 
-  website. The user can sort through novels by most viewed, most followed, highest rated, etc... The second choice for a user
-  looking for something to read, is the 'library' button. The library consists of every novel stored in the website's database
-  and a user will be able to navigate through these novels using pagination buttons at the bottom right of the screen. The last
-  option in the explore dropdown is the 'random' button. This button will pull a random novel from the database, the user can
-  continually use the random button until a suitable novel is found. If a user does have a novel in mind, they can enter the 
-  novel title in the search bar in the top right of the screen. After clicking enter, the user will be redirected to a list of
-  novels that have a similar title to the one the user entered, the user can then click the correct novel and then begin reading.
+  If the user does not already have a novel to read in mind, they have several choices, all of which are listed under the explore dropdown located in the navbar. The first choice is the 'top-rated' button which consists of the most well received novels on the website. Users can sort through novels by most viewed, most followed, highest rated, etc... The second choice for a user looking for something to read, is the 'library' button. The library consists of every novel stored in the website's database and a user will be able to navigate through these novels using pagination buttons at the bottom right of the screen. The last option in the explore dropdown is the 'random' button. This button will pull a random novel from the database, the user can continually use the random button until a suitable novel is found. If a user does have a novel in mind, they can enter the novel title in the search bar in the top right of the screen. After clicking enter, the user will be redirected to a list of novels that have a similar title to the one the user entered, the user can then click the correct novel and then begin reading.
 
 2. Users can write a novel
-  To begin writing a novel, the user can click the 'write' button located in the middle of the navbar. After clicking write, the
-  user will be redirected to their personal novel page which will display all of their currently created novels. In order to proceed,
-  the user will need to click on a novel for which to write to, or in the case the user has yet to create a novel, they will need to
-  press the create novel button. The process of creating a novel will include, giving the novel a title (required), several
-  tags (optional), a description (optional), and a novel cover (optional). Once the user is finished filling out the novel's information,
-  they will press the 'create' button, finalizing the creation of their novel. Now that the user has a novel to write to, they can once again
-  click the 'write' button, and then click the novel they have just created in their personal novel page. The user will be redirected one
-  final time to a text editor that consists of a chapter title, and chapter contents. Once the user is satisfied with whatever they have written
-  in the chapter contents, they can press submit and the chapter will be posted to their novel.
+  To begin writing a novel, the user can click the 'write' button located in the middle of the navbar. After clicking write, the user will be redirected to their personal novel page which will display all of their currently created novels. In order to proceed, the user will need to click on a novel for which to write to, or in the case the user has yet to create a novel, they will need to press the create novel button. The process of creating a novel will include giving the novel a title (required), several tags (optional), a description (optional), and a novel cover (optional). Once the user is finished filling out the novel's information, they will press the 'create' button, finalizing the creation of their novel. Now that the user has a novel to write to, they can once again click the 'write' button, and then click the novel they have just created in their personal novel page. The user will be redirected one final time to a text editor that consists of a chapter title, and chapter content. Once the user is satisfied with whatever they have written in the chapter content, they can press submit and the chapter will be posted to their novel.
   
 3. Users can conversate in the comments section
-  At the end of each chapter will be a comments section. Users will be able to fill out a text area input box with whatever they wish to talk about, whether
-  that be about the chapter they have just finished reading, or in response to other user comments. For each comment, other users will have the option
-  to 'reply', which will create a child comment on the parent comment. For this reason, users will be able to view and revist their own comments by
-  clicking their profile icon, then pressing the 'profile' button, and finally navigating to the 'comments' section in their profile. This section
-  will display all of the users comments by date, newest to oldest, and clicking on a comment will redirect the user to the chapter they commented on.
+  There is a comment section at the end of each chapter. Users will be able to fill out a text area input box with whatever they wish to talk about, whether that be about the chapter they have just finished reading, or in response to other user comments. For each comment, other users will have the option to 'reply', which will create a child comment on the parent comment. For this reason, users will be able to view and revisit their own comments by clicking their profile icon, then pressing the 'profile' button, and finally navigating to the 'comments' section in their profile. This section will display all the users' comments by date, newest to oldest, and clicking on a comment will redirect the user to the chapter they commented on.
   
-4. Trusted users' abilities
+4. Some users can lightly moderate the site as a 'trusted user'
+  Users who show frequent activity on the website and seem as if they can be trusted will be given a special status known as 'trusted users'. Trusted users will be able to view chapters for novels that have yet to be reviewed, and they can also post chapters for their own novels without having to be reviewed by others. Overall, these users will use the site to prevent unwanted users from vandalizing the site and to help new writers publish their work more quickly.
   
-5. A select number of the trusted users will have even more authority
+5. A select number of the trusted users can monitor the site even more as 'moderators' or 'admins'
+  Trusted users who wish to take on more responsibility can be promoted to the moderator role, and some moderators can become administrators once they prove they can handle it. These staff members will be using the site more as a job, where they will be responsible for maintaining the peace and regulating what content is allowed and what isn't. The main motivation for these positions is to be more involved in the community, as these people will not be paid. Not at all.
   
 6. Trusted users can give corrections on a chapter
+  Some users that are particular about correcting people that make mistakes can use the websites 'chapter correction' function to tell writers what they are doing wrong. These chapter corrections will work similar to that of google doc's comments, and each correction will be displayed for all users to see so that the same correction is not repeatedly submitted (which would be the case if only the author could see the corrections). The purpose of having this feature only for trusted users is to make the position more attractive and prevent normal users from spamming corrections.
   
 7. Users can give a review and rating of a novel
-  After reading several chapters of a novel, users will have the option to give a review and rate the novel. In order to do this, users will need to
-  navigate to the novel's homepage. The process of rating a novel is simple, as there will be five transparent stars at the top of the page near
-  the novel title that the user can click to rate the novel. Scrolling to the bottom of the novel homepage, a user will see the review section. At the top of
-  the review section will be an input form requiring a review title and review content. After filling out the required information, the user will click
-  submit and their review will be posted in the review section of that novel. 
+  After reading several chapters of a novel, users will have the option to give a review and rate the novel. In order to do this, users will need to navigate to the novel's homepage. The process of rating a novel is simple, as there will be five transparent stars at the top of the page near the novel title that the user can click to rate the novel. Scrolling to the bottom of the novel homepage, a user will see the review section. At the top of the review section will be an input form requiring a review title and review content. After filling out the required information, the user will click submit and their review will be posted in the review section of that novel. 
 
 8. Users can provide feedback to the website
-  Located in the navbar at the top of the screen will be a feedback button that will allow users to contact staff if needed. Some reasons to contact staff
-  include: bugs, locked out of an account, another user claiming a novel is theirs when it is not, and users can also inform staff on where the website can
-  be improved. The structure of the feedback form will be: a section for the user to put their email so that staff can contact the user even if they are 
-  locked out of an account, a subject area so whoever is reading the feedback report will understand it more clearly, and finally there will be a content
-  section for the user to describe the problem more clearly. Some users who are bored can use this by searching the website for bugs in order to shame the 
-  two developers, or users can suggest features to make the developers lose more sleep.
+  There will be a feedback button in the navigation bar at the top of the screen, allowing users to contact staff if needed. Some reasons to contact staff include: errors, account lockouts, another user claiming a novel as theirs when in fact it is not theirs, and users can advise staff on areas in which the site could be improved. The structure of the feedback form will be: a section for the user to put their email so that staff can contact the user even if they are locked out of an account, a subject area so whoever is reading the feedback report will understand it more clearly, and finally there will be a content section for the user to describe the problem more clearly. Some users who are bored can use this by searching the website for bugs in order to shame the two developers, or users can suggest features to make the developers lose more sleep.
 
 9. Users can look through the provided resources to better their writing
+  If users are looking for tips on how to be a better writer, they can use the site's resources tab located in the navbar. The different options will be arranged vertically using an accordion component that can be opened or closed by clicking. There will be a variety of options to help writers such as: ways to improve your grammar, how to make a better character, tips on writing scenery, etc... Users who have yet to begin writing will also be interested in this as there will be a section dedicated to thinking of ideas for a new novel, and how to properly plan the story in a novel.
 
 10. New writers can get their novel displayed on the front page carousel
-
-
+  If a new author is struggling to attract readers for their novel, they can request that their novel be featured on the homepage of the site. If the novel is accepted, some of the information from the novel's homepage will be put into a composite image, and then placed inside of a carousel to be displayed for the next week. There will also be an automated feature so that if there aren't enough writers requesting to have their novel displayed, a random new novel will be displayed instead. 
+  
