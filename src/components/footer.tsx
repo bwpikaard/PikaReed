@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type {ReactElement} from "react";
 
-import Contact from "./footer-modals/contact";
 import Liscensing from "./footer-modals/liscensing";
 import PrivacyPolicy from "./footer-modals/privacy-policy";
 import Modal from "./modal";
@@ -29,7 +28,7 @@ export default function Footer(): ReactElement {
                 </li>
                 <li>
                     <div className="mr-4 md:mr-6">
-                        <Modal displayName="Contact"><Contact /></Modal>
+                        <Link href="/feedback" className="">Contact</Link>
                     </div>
                 </li>
             </ul>
