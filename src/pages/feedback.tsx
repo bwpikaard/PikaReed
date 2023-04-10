@@ -1,6 +1,6 @@
 import type {ReactElement} from "react";
 
-export default function Profile(): ReactElement {
+export default function Feedback(): ReactElement {
     return (
         <>
             <section className="bg-white dark:bg-gray-900">
