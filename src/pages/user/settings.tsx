@@ -9,7 +9,7 @@ import ChangePassword from "../../components/change-settings/change-password";
 import ChangeUsername from "../../components/change-settings/change-username";
 import GeneralSettings from "../../components/change-settings/general-settings";
 
-export default function Write(): ReactElement {
+export default function Settings(): ReactElement {
 
     const [check, setPage] = useState<"avt" | "eml" | "psw" | "set" | "usr">();
     
