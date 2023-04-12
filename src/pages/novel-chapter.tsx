@@ -10,19 +10,30 @@ export default function NovelChapter(): ReactElement {
             </div>
             
             <div className="grid grid-cols-7 pt-10">
+                <div className="col-start-2 col-span-5 pb-5 flex justify-between items-center">
+                    <Link href="#" className="inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <svg aria-hidden="true" className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd"></path></svg>
+                        Previous
+                    </Link>
+                    <Link href="#" className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                        Next
+                        <svg aria-hidden="true" className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </Link>
+                </div>
+
                 <div className="col-start-2 col-span-5">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis maximus urna. Suspendisse commodo mauris ut lectus pharetra eleifend nec et tortor. Fusce vehicula purus nec eros consequat, ac semper velit sodales. Aliquam et enim nec felis tempor euismod ut ut ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu quam non mi condimentum maximus. Quisque mollis, ante non ullamcorper euismod, urna risus cursus dolor, aliquam suscipit eros libero at magna. Fusce orci lectus, condimentum vel blandit ac, bibendum at neque. Duis in luctus ante. Fusce sed diam sed nibh volutpat blandit sit amet ac sapien. Morbi vitae dolor at mi porta suscipit hendrerit id lorem. Aliquam non consequat turpis. Nullam commodo lectus vitae nibh vestibulum, sed pulvinar nisl faucibus. Fusce molestie euismod nisl, ut mollis augue volutpat ac.
 
-Donec condimentum sem ex, id porttitor dui dictum sit amet. Morbi vel posuere magna. Vestibulum vel lacus ex. Aliquam non quam faucibus, rhoncus mauris vel, mattis lectus. Suspendisse potenti. In aliquam sem nec nunc suscipit molestie. Mauris luctus scelerisque odio, sit amet cursus leo luctus vitae. Nam vestibulum dignissim nibh, eget iaculis ex malesuada a. Mauris elementum pharetra orci a sodales. Vestibulum vel consequat orci, eu auctor justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In massa quam, molestie non tristique a, porttitor id nulla.
+                        Donec condimentum sem ex, id porttitor dui dictum sit amet. Morbi vel posuere magna. Vestibulum vel lacus ex. Aliquam non quam faucibus, rhoncus mauris vel, mattis lectus. Suspendisse potenti. In aliquam sem nec nunc suscipit molestie. Mauris luctus scelerisque odio, sit amet cursus leo luctus vitae. Nam vestibulum dignissim nibh, eget iaculis ex malesuada a. Mauris elementum pharetra orci a sodales. Vestibulum vel consequat orci, eu auctor justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In massa quam, molestie non tristique a, porttitor id nulla.
 
-Donec et felis a ex vulputate eleifend tempus non leo. Curabitur nec ultrices nunc. Aliquam non sollicitudin urna. Donec vehicula dolor et vehicula egestas. Mauris vel velit nec nisl euismod vestibulum ac sit amet elit. Ut ut risus eu dui aliquet imperdiet. Suspendisse ultrices lectus at sapien lobortis sollicitudin.
+                        Donec et felis a ex vulputate eleifend tempus non leo. Curabitur nec ultrices nunc. Aliquam non sollicitudin urna. Donec vehicula dolor et vehicula egestas. Mauris vel velit nec nisl euismod vestibulum ac sit amet elit. Ut ut risus eu dui aliquet imperdiet. Suspendisse ultrices lectus at sapien lobortis sollicitudin.
 
-Nam vulputate suscipit varius. In ut facilisis elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut eu urna eget felis accumsan aliquam at quis dui. Morbi tincidunt urna a interdum sollicitudin. Phasellus imperdiet, arcu vel facilisis accumsan, felis justo malesuada neque, nec tempus nisi elit eget neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque rutrum elit nisl, in faucibus felis efficitur sed. Suspendisse vitae magna sapien. Nunc vel sagittis ipsum, nec mattis enim. Sed in mollis arcu. Pellentesque iaculis posuere nisi at tempor. Aenean nec lacus vel nunc vehicula commodo at eu lectus. Donec efficitur enim ipsum, sit amet rutrum massa pellentesque non.
+                        Nam vulputate suscipit varius. In ut facilisis elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut eu urna eget felis accumsan aliquam at quis dui. Morbi tincidunt urna a interdum sollicitudin. Phasellus imperdiet, arcu vel facilisis accumsan, felis justo malesuada neque, nec tempus nisi elit eget neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque rutrum elit nisl, in faucibus felis efficitur sed. Suspendisse vitae magna sapien. Nunc vel sagittis ipsum, nec mattis enim. Sed in mollis arcu. Pellentesque iaculis posuere nisi at tempor. Aenean nec lacus vel nunc vehicula commodo at eu lectus. Donec efficitur enim ipsum, sit amet rutrum massa pellentesque non.
 
-Nulla et dapibus tellus. Donec eget dolor lectus. Duis id molestie ipsum, ut interdum magna. Mauris imperdiet massa eu nisl feugiat blandit. Pellentesque dignissim tortor nec odio ultricies venenatis. Cras porttitor metus eget ligula aliquet pretium. Proin laoreet erat at tristique lacinia. Morbi ut leo est. Donec condimentum risus ac elit suscipit sodales. Curabitur at nulla at mauris dignissim interdum quis non leo. Aliquam erat volutpat. Integer quis dignissim neque, at molestie nisi.</p>
+                        Nulla et dapibus tellus. Donec eget dolor lectus. Duis id molestie ipsum, ut interdum magna. Mauris imperdiet massa eu nisl feugiat blandit. Pellentesque dignissim tortor nec odio ultricies venenatis. Cras porttitor metus eget ligula aliquet pretium. Proin laoreet erat at tristique lacinia. Morbi ut leo est. Donec condimentum risus ac elit suscipit sodales. Curabitur at nulla at mauris dignissim interdum quis non leo. Aliquam erat volutpat. Integer quis dignissim neque, at molestie nisi.</p>
                 </div>
 
-                <div className="col-start-2 col-span-5 pt-5 flex justify-center">
+                <div className="col-start-2 col-span-5 pt-5 flex justify-between items-center">
                     <Link href="#" className="inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                         <svg aria-hidden="true" className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd"></path></svg>
                         Previous
@@ -35,7 +46,7 @@ Nulla et dapibus tellus. Donec eget dolor lectus. Duis id molestie ipsum, ut int
 
                 <div className="col-start-2 col-span-5">
                     <section className="bg-white dark:bg-gray-900 py-8 lg:py-16">
-                        <div className="max-w-2xl mx-auto px-4">
+                        <div className="max-w-fit mx-auto px-4">
                             <div className="flex justify-between items-center mb-6">
                                 <h2 className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Comments</h2>
                             </div>
