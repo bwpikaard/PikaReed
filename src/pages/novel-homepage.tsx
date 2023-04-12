@@ -45,12 +45,14 @@ export default function NovelHomepage(): ReactElement {
             { /* Novels chapters and tags (tags directly under novel cover so chapters are in line with novel data) */ }
             <div className="grid grid-cols-5 gap-10">
                 <div className="col-span-1">
-                    <p className="bg-gray-100 text-gray-800 text-md font-medium mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Action</p>
-                    <p className="bg-gray-100 text-gray-800 text-md font-medium mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Adventure</p>
-                    <p className="bg-gray-100 text-gray-800 text-md font-medium mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Horror</p>
-                    <p className="bg-gray-100 text-gray-800 text-md font-medium mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Thriller</p>
-                    <p className="bg-gray-100 text-gray-800 text-md font-medium mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Mystery</p>
-                    <p className="bg-gray-100 text-gray-800 text-md font-medium mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Sci-Fi</p>
+                    <div className="flex flex-wrap">
+                        <span className="bg-gray-100 text-gray-800 text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Action</span>
+                        <span className="bg-gray-100 text-gray-800 text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Adventure</span>
+                        <span className="bg-gray-100 text-gray-800 text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Horror</span>
+                        <span className="bg-gray-100 text-gray-800 text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Thriller</span>
+                        <span className="bg-gray-100 text-gray-800 text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Mystery</span>
+                        <span className="bg-gray-100 text-gray-800 text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Sci-Fi</span>
+                    </div>
                 </div>
 
                 <div className="col-span-3 relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -63,6 +65,9 @@ export default function NovelHomepage(): ReactElement {
                                 <th scope="col" className="px-6 py-3">
                                     Date
                                 </th>
+                                <th scope="col" className="px-6 py-3">
+                                    Bookmark
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -73,6 +78,11 @@ export default function NovelHomepage(): ReactElement {
                                 <td className="px-6 py-4">
                                     02/11/2018
                                 </td>
+                                <td className="px-6 py-4">
+                                    <div className="flex items-center">
+                                        <input checked id="checkbox-1" type="checkbox" value="" className="ml-6 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                    </div>
+                                </td>
                             </tr>
                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -80,6 +90,11 @@ export default function NovelHomepage(): ReactElement {
                                 </th>
                                 <td className="px-6 py-4">
                                     02/16/2018
+                                </td>
+                                <td className="px-6 py-4">
+                                    <div className="flex items-center">
+                                        <input id="checkbox-2" type="checkbox" value="" className="ml-6 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                    </div>
                                 </td>
                             </tr>
                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -89,6 +104,11 @@ export default function NovelHomepage(): ReactElement {
                                 <td className="px-6 py-4">
                                     02/15/2018
                                 </td>
+                                <td className="px-6 py-4">
+                                    <div className="flex items-center">
+                                        <input id="checkbox-2" type="checkbox" value="" className="ml-6 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                    </div>
+                                </td>
                             </tr>
                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -96,6 +116,11 @@ export default function NovelHomepage(): ReactElement {
                                 </th>
                                 <td className="px-6 py-4">
                                     02/11/2018
+                                </td>
+                                <td className="px-6 py-4">
+                                    <div className="flex items-center">
+                                        <input id="checkbox-2" type="checkbox" value="" className="ml-6 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                    </div>
                                 </td>
                             </tr>
                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -105,6 +130,11 @@ export default function NovelHomepage(): ReactElement {
                                 <td className="px-6 py-4">
                                     02/16/2018
                                 </td>
+                                <td className="px-6 py-4">
+                                    <div className="flex items-center">
+                                        <input id="checkbox-2" type="checkbox" value="" className="ml-6 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                    </div>
+                                </td>
                             </tr>
                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -112,6 +142,11 @@ export default function NovelHomepage(): ReactElement {
                                 </th>
                                 <td className="px-6 py-4">
                                     02/15/2018
+                                </td>
+                                <td className="px-6 py-4">
+                                    <div className="flex items-center">
+                                        <input id="checkbox-2" type="checkbox" value="" className="ml-6 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                    </div>
                                 </td>
                             </tr>
                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -121,6 +156,11 @@ export default function NovelHomepage(): ReactElement {
                                 <td className="px-6 py-4">
                                     02/11/2018
                                 </td>
+                                <td className="px-6 py-4">
+                                    <div className="flex items-center">
+                                        <input id="checkbox-2" type="checkbox" value="" className="ml-6 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                    </div>
+                                </td>
                             </tr>
                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -128,6 +168,11 @@ export default function NovelHomepage(): ReactElement {
                                 </th>
                                 <td className="px-6 py-4">
                                     02/16/2018
+                                </td>
+                                <td className="px-6 py-4">
+                                    <div className="flex items-center">
+                                        <input id="checkbox-2" type="checkbox" value="" className="ml-6 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                    </div>
                                 </td>
                             </tr>
                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -137,6 +182,11 @@ export default function NovelHomepage(): ReactElement {
                                 <td className="px-6 py-4">
                                     02/15/2018
                                 </td>
+                                <td className="px-6 py-4">
+                                    <div className="flex items-center">
+                                        <input id="checkbox-2" type="checkbox" value="" className="ml-6 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                    </div>
+                                </td>
                             </tr>
                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -144,6 +194,11 @@ export default function NovelHomepage(): ReactElement {
                                 </th>
                                 <td className="px-6 py-4">
                                     02/11/2018
+                                </td>
+                                <td className="px-6 py-4">
+                                    <div className="flex items-center">
+                                        <input id="checkbox-2" type="checkbox" value="" className="ml-6 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
