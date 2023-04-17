@@ -12,8 +12,8 @@ export default function NovelHomepage(): ReactElement {
 
                 { /* Title, recorded data for novel, description */ }
                 <div className="col-span-3">
-                    <h2 className="text-4xl font-bold dark:text-white">Charlie and the Chocolate Factory</h2>
-
+                    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Charlie and the Chocolate Factory</h2>
+                        
                     <div className="flex items-center pt-5">
                         <p className="pr-8">XXXX Views</p>
                         <p className="pr-8">XXXX Follows</p>
@@ -80,7 +80,7 @@ export default function NovelHomepage(): ReactElement {
                                 </td>
                                 <td className="px-6 py-4">
                                     <div className="flex items-center">
-                                        <input checked id="checkbox-1" type="checkbox" value="" className="ml-6 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                        <input defaultChecked id="checkbox-1" type="checkbox" value="" className="ml-6 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                     </div>
                                 </td>
                             </tr>
@@ -209,7 +209,18 @@ export default function NovelHomepage(): ReactElement {
             { /* Novel reviews */ }
             <div className="grid grid-cols-5 gap-10 py-10">
                 <div className="col-span-3 col-start-2">
-                    <article>
+                    <div>
+                        <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Title of review</label>
+                        <input type="text" id="subject" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Give a brief description of your review" required />
+                    </div>
+                    <div className="pt-2 pb-2">
+                        <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Review contents</label>
+                        <textarea id="message" rows={6} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Write your review..."></textarea>
+                    </div>
+                    <button type="submit" className="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                        Post review
+                    </button>
+                    <article className="pt-10">
                         <div className="flex items-center mb-4 space-x-4">
                             <Image className="w-10 h-10 rounded-full" src="/no-pfp.ico" alt="" width="20" height="20" />
                             <div className="space-y-1 font-medium dark:text-white">
