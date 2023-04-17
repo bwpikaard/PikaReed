@@ -6,7 +6,7 @@ export default function NovelChapter(): ReactElement {
     return (
         <>
             <div className="pt-10 flex justify-center">
-                <h1 className="text-4xl font-bold dark:text-white">Chapter Title</h1>
+                <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Chapter Title</h1>
             </div>
             
             <div className="grid grid-cols-7 pt-10">
@@ -17,7 +17,7 @@ export default function NovelChapter(): ReactElement {
                     </Link>
                     <Link href="#" className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                         Next
-                        <svg aria-hidden="true" className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        <svg aria-hidden="true" className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                     </Link>
                 </div>
 
@@ -40,7 +40,7 @@ export default function NovelChapter(): ReactElement {
                     </Link>
                     <Link href="#" className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                         Next
-                        <svg aria-hidden="true" className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        <svg aria-hidden="true" className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                     </Link>
                 </div>
 
@@ -57,8 +57,7 @@ export default function NovelChapter(): ReactElement {
                                         className="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
                                         placeholder="Write a comment..." required></textarea>
                                 </div>
-                                <button type="submit"
-                                    className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                                <button type="submit" className="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
                                     Post comment
                                 </button>
                             </form>
@@ -70,7 +69,7 @@ export default function NovelChapter(): ReactElement {
                                             src="/no-pfp.ico"
                                             alt="Michael Gough"
                                             width="20" height="20"/>Michael Gough</p>
-                                        <p className="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
+                                        <p className="text-sm text-gray-600 dark:text-gray-400"><time dateTime="2022-02-08"
                                             title="February 8th, 2022">Feb. 8, 2022</time></p>
                                     </div>
                                     <button id="dropdownComment1Button" data-dropdown-toggle="dropdownComment1"
@@ -110,7 +109,7 @@ export default function NovelChapter(): ReactElement {
                                 <div className="flex items-center mt-4 space-x-4">
                                     <button type="button"
                                         className="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400">
-                                        <svg aria-hidden="true" className="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                                        <svg aria-hidden="true" className="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                                         Reply
                                     </button>
                                 </div>
@@ -123,7 +122,7 @@ export default function NovelChapter(): ReactElement {
                                             src="/no-pfp.ico"
                                             alt="Jese Leos"
                                             width="20" height="20"/>Jese Leos</p>
-                                        <p className="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-12"
+                                        <p className="text-sm text-gray-600 dark:text-gray-400"><time dateTime="2022-02-12"
                                             title="February 12th, 2022">Feb. 12, 2022</time></p>
                                     </div>
                                     <button id="dropdownComment2Button" data-dropdown-toggle="dropdownComment2"
@@ -161,7 +160,7 @@ export default function NovelChapter(): ReactElement {
                                 <div className="flex items-center mt-4 space-x-4">
                                     <button type="button"
                                         className="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400">
-                                        <svg aria-hidden="true" className="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                                        <svg aria-hidden="true" className="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                                         Reply
                                     </button>
                                 </div>
@@ -174,7 +173,7 @@ export default function NovelChapter(): ReactElement {
                                             src="/no-pfp.ico"
                                             alt="Bonnie Green"
                                             width="20" height="20"/>Bonnie Green</p>
-                                        <p className="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-03-12"
+                                        <p className="text-sm text-gray-600 dark:text-gray-400"><time dateTime="2022-03-12"
                                             title="March 12th, 2022">Mar. 12, 2022</time></p>
                                     </div>
                                     <button id="dropdownComment3Button" data-dropdown-toggle="dropdownComment3"
@@ -212,7 +211,7 @@ export default function NovelChapter(): ReactElement {
                                 <div className="flex items-center mt-4 space-x-4">
                                     <button type="button"
                                         className="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400">
-                                        <svg aria-hidden="true" className="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                                        <svg aria-hidden="true" className="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                                         Reply
                                     </button>
                                 </div>
@@ -225,7 +224,7 @@ export default function NovelChapter(): ReactElement {
                                             src="/no-pfp.ico"
                                             alt="Helene Engels"
                                             width="20" height="20"/>Helene Engels</p>
-                                        <p className="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-06-23"
+                                        <p className="text-sm text-gray-600 dark:text-gray-400"><time dateTime="2022-06-23"
                                             title="June 23rd, 2022">Jun. 23, 2022</time></p>
                                     </div>
                                     <button id="dropdownComment4Button" data-dropdown-toggle="dropdownComment4"
@@ -262,7 +261,7 @@ export default function NovelChapter(): ReactElement {
                                 <div className="flex items-center mt-4 space-x-4">
                                     <button type="button"
                                         className="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400">
-                                        <svg aria-hidden="true" className="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                                        <svg aria-hidden="true" className="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                                         Reply
                                     </button>
                                 </div>
