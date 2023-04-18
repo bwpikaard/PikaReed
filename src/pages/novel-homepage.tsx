@@ -12,7 +12,7 @@ export default function NovelHomepage(): ReactElement {
 
                 { /* Title, recorded data for novel, description */ }
                 <div className="col-span-3">
-                    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Charlie and the Chocolate Factory</h2>
+                    <h2 className="pt-8 mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Charlie and the Chocolate Factory</h2>
                         
                     <div className="flex items-center pt-5">
                         <p className="pr-8">XXXX Views</p>
