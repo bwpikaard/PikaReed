@@ -47,6 +47,6 @@ export default NextAuth({
         // signOut: "/sign-out",
         // error: "/error",
         // verifyRequest: "/verify-request",
-        // newUser: "/sign-up",
+        newUser: "/sign-up",
     },
 });
