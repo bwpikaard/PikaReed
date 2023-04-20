@@ -4,9 +4,10 @@ import Link from "next/link";
 import type {ReactElement} from "react";
 
 function tableRows(): ReactElement {
+    // eslint-disable-next-line no-undef
     const rows: JSX.Element[] = [];
     for (let i = 0;i < 10;i++) {
-        let oneRow = <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+        const oneRow = <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <Link href="/novel-homepage">Charlie and the Chocolate Factory</Link>
             </th>
@@ -26,6 +27,7 @@ function tableRows(): ReactElement {
 }
 
 function carouselImages(): ReactElement {
+    // eslint-disable-next-line no-undef
     const images: JSX.Element[] = [];
     for (let i = 0;i < 5;i++) {
         const oneImage = <Link href="/novel-homepage">
