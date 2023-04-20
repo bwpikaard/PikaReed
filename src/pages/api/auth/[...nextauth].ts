@@ -42,11 +42,11 @@ export default NextAuth({
             },
         }),
     ],
-    /* pages: {
+    pages: {
         signIn: "/sign-in",
         // signOut: "/sign-out",
         // error: "/error",
         // verifyRequest: "/verify-request",
         // newUser: "/sign-up",
-    }, */
+    },
 });
