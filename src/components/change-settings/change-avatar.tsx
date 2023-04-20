@@ -14,6 +14,7 @@ export default function ChangeAvatar(): ReactElement {
     }
 
     const handleChange = (temp): void => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         setSelectedImage(temp.target.files[0]);
     };
 
@@ -27,7 +28,7 @@ export default function ChangeAvatar(): ReactElement {
 
     return (
         <>
-            <Image className="rounded-full w-96 h-96" src={imageSource} alt="image description" height="300" width="300"/>
+            <Image className="rounded-full w-40 h-40" src={imageSource} alt="image description" height="300" width="300"/>
 
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" htmlFor="file_input">Upload file</label>
             <input onChange={handleChange} className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file" />
