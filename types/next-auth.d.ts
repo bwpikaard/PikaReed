@@ -5,6 +5,11 @@ import NextAuth from "next-auth";
 declare module "next-auth" {
     interface User extends DefaultSession.User {
         id: number;
+        roles: Array<{
+            name: string;
+            color: string;
+        }>;
+        actions: string[];
     }
 
     interface Session {

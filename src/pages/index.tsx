@@ -2,6 +2,10 @@ import {Carousel} from "flowbite-react";
 import Image from "next/image";
 import Link from "next/link";
 import type {ReactElement} from "react";
+import useSWR from "swr";
+
+import type {Novel} from "../entities/novel.entity";
+import {fetcher} from "../lib/swrFetcher";
 
 function tableRows(): ReactElement {
     // eslint-disable-next-line no-undef
@@ -82,6 +86,10 @@ function carouselImages(): ReactElement {
 }
 
 export default function Home(): ReactElement {
+    const {data: novels, error: novelsError} = useSWR<Novel[], Error>("/api/novels", fetcher);
+
+    if (!novels || novelsError) return <div>Loading...</div>;
+
     return (
         <>
             <div className="pt-10">
