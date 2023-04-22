@@ -16,11 +16,26 @@ export default async function handler(
     }
 
     const ds = await ReadyDataSource();
-
     const novelRepo = ds.getRepository(Novel);
+    
     const novel = await novelRepo.findOneOrFail({
         where: {
             id: Number(novelId),
+        },
+        relations: {
+            tags: true,
+            chapters: {
+                comments: {
+                    user: {
+                        roles: true,
+                    },
+                },
+            },
+            reviews: {
+                user: {
+                    roles: true,
+                },
+            },
         },
     });
 

@@ -1,9 +1,11 @@
+import type {Relation} from "typeorm";
 import {
-    Column, Entity, ManyToOne,
+    Column, Entity, ManyToOne, OneToMany,
 } from "typeorm";
 
 import {BaseEntity} from "./base-entity";
 import {Novel} from "./novel.entity";
+import type {NovelComment} from "./novel-comment.entity";
 
 @Entity()
 export class NovelChapter extends BaseEntity {
@@ -18,4 +20,7 @@ export class NovelChapter extends BaseEntity {
 
     @Column({type: "text"})
     htmlBody: string;
+
+    @OneToMany("NovelComment", "chapter")
+    comments: Array<Relation<NovelComment>>;
 }

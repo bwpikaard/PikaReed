@@ -19,5 +19,4 @@ export class NovelReview extends BaseEntity {
 
     @Column()
     comment: string;
-
 }

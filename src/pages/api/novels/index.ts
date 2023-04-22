@@ -10,10 +10,15 @@ export default async function handler(
     res: NextApiResponse<Novel[]>,
 ): Promise<void> {
     const ds = await ReadyDataSource();
-
     const novelRepo = ds.getRepository(Novel);
+
     const novels = await novelRepo.find({
         where: {status: NovelStatus.Published},
+        relations: {
+            tags: true,
+            reviews: true,
+            chapters: true,
+        },
         take: 20,
     });
 
