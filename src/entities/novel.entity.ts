@@ -12,6 +12,9 @@ import {User} from "./user.entity";
 
 @Entity()
 export class Novel extends BaseEntity {
+    @Column({type: "int"})
+    authorId: number;
+    
     @ManyToOne(() => User)
     author: User;
 
