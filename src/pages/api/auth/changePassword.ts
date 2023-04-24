@@ -1,4 +1,4 @@
-import {compare} from "bcrypt";
+import {compare, hash} from "bcrypt";
 import type {NextApiRequest, NextApiResponse} from "next";
 import {getServerSession} from "next-auth";
 import {z} from "zod";
@@ -8,9 +8,9 @@ import {User} from "../../../entities/user.entity";
 import {authOptions} from "./[...nextauth]";
 
 const bodySchema = z.object({
-    password: z.string(),
-    newEmail: z.string(),
-    confirmedEmail: z.string(),
+    currentPassword: z.string(),
+    newPassword: z.string(),
+    confirmedPassword: z.string(),
 });
 
 export default async function handler(
@@ -25,17 +25,17 @@ export default async function handler(
     const body = bodySchema.safeParse(req.body);
     if (!body.success) return res.status(400);
     
-    if (body.data.newEmail !== body.data.confirmedEmail) return res.status(400);
+    if (body.data.newPassword !== body.data.confirmedPassword) return res.status(400);
 
     const ds = await ReadyDataSource();
     const userRepo = ds.getRepository(User);
 
     let user = await userRepo.findOne({where: {id: session.user.id}, select: {password: true} });
     if (!user) return res.status(400).write("No user logged in");
-    if (!await compare(body.data.password, user.password)) return res.status(400).write("Incorrect Password");
+    if (!await compare(body.data.currentPassword, user.password)) return res.status(400).write("Incorrect Password");
 
     user = userRepo.merge(user, {
-        email: body.data.newEmail,
+        password: await hash(body.data.newPassword, 10),
     });
     await userRepo.save(user);
 
