@@ -1,7 +1,9 @@
 import config from "config";
+import type {EntityTarget, SelectQueryBuilder} from "typeorm";
 import {DataSource as ORMDataSource} from "typeorm";
 
 import {Action} from "./entities/action.entity";
+import type {BaseEntity} from "./entities/base-entity";
 import {FeedbackSubmission} from "./entities/feedback.entity";
 import {Novel} from "./entities/novel.entity";
 import {NovelChapter} from "./entities/novel-chapter.entity";
@@ -27,4 +29,21 @@ export async function ReadyDataSource(): Promise<ORMDataSource> {
 
     await DataSource.initialize();
     return DataSource;
+}
+
+export async function similarityBuilder<T extends BaseEntity>(entity: EntityTarget<T>, query: string, field: keyof T, threshold = 0.5, limit = 10): Promise<SelectQueryBuilder<T>> {
+    const ds = await ReadyDataSource();
+    const repo = ds.getRepository(entity);
+
+    return repo.createQueryBuilder(entity.constructor.name)
+        .addSelect(`SIMILARITY(${String(field)}, :query)`, "similarity")
+        .where(`SIMILARITY(${String(field)}, :query) > :threshold`, {threshold})
+        .setParameter("query", query)
+        .orderBy("similarity", "DESC")
+        .take(limit < 0 ? undefined : limit);
+}
+
+export async function getSimilar<T extends BaseEntity>(entity: EntityTarget<T>, query: string, field: keyof T, threshold?: number, limit?: number): Promise<T[]> {
+    const builder = await similarityBuilder(entity, query, field, threshold, limit);
+    return builder.getMany();
 }
