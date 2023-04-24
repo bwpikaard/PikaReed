@@ -8,7 +8,7 @@ import {User} from "../../../entities/user.entity";
 const bodySchema = z.object({
     firstName: z.string(),
     lastName: z.string(),
-    displayName: z.string(),
+    username: z.string(),
     email: z.string(),
     password: z.string(),
     confirmedPassword: z.string(),
@@ -34,7 +34,7 @@ export default async function handler(
     const newUser = userRepo.create({
         firstName: body.data.firstName,
         lastName: body.data.lastName,
-        displayName: body.data.displayName,
+        username: body.data.username,
         email: body.data.email,
         password: await hash(body.data.password, 10),
     });
