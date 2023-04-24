@@ -1,4 +1,5 @@
 import type {GetServerSidePropsContext, InferGetServerSidePropsType} from "next";
+import Link from "next/link";
 import {getCsrfToken} from "next-auth/react";
 
 export default function SignIn({csrfToken}: InferGetServerSidePropsType<typeof getServerSideProps>): unknown  {
@@ -24,7 +25,7 @@ export default function SignIn({csrfToken}: InferGetServerSidePropsType<typeof g
                                     Sign in
                             </button>
                             <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                                    Don’t have an account yet? <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
+                                    Don’t have an account yet? <Link href="/sign-up" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</Link>
                             </p>
                         </form>
                     </div>
