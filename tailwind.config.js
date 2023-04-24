@@ -12,5 +12,15 @@ module.exports = {
     plugins: [
         require("flowbite/plugin")
     ],
-    theme: {},
+    theme: {
+        colors: {
+            transparent: 'transparent',
+            current: 'currentColor',
+            'greyish': '#314866',
+            'mute-grey': '#293241',
+            'basically-white': '#bbf6f8',
+            'mute-black': '#212834',
+            'white': '#ffffff',
+        },
+    },
 };
