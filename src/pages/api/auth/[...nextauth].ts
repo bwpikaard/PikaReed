@@ -28,7 +28,7 @@ export const authOptions: AuthOptions = {
                     const credentialsUser = await userRepository.findOne({
                         where: [
                             {email: credentials.username},
-                            {displayName: credentials.username},
+                            {username: credentials.username},
                         ],
                         select: {
                             id: true,
@@ -43,7 +43,7 @@ export const authOptions: AuthOptions = {
 
                     return {
                         id: user.id,
-                        name: user.displayName,
+                        name: `${user.firstName} ${user.lastName}`,
                         email: user.email,
                         image: user.avatarUrl,
                         roles: user.roles.flatMap(r => ({
