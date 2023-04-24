@@ -18,6 +18,9 @@ export default function Liscensing(): ReactElement {
             -- NodeJS --<br/>
             Copyright (c) 2012-2022 by various contributors<br/><br/>
 
+            -- SWR --<br/>
+            Copyright (c) 2023 Vercel, Inc.<br/><br/>
+
             -- react-quiljs --<br/>
             Copyright (c) Jehun Seem &#60;jehunseem@gmail.com&#62; (https//github.com/gtgalone)<br/><br/>
 

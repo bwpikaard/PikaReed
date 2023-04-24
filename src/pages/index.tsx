@@ -11,17 +11,17 @@ function tableRows(): ReactElement {
     // eslint-disable-next-line no-undef
     const rows: JSX.Element[] = [];
     for (let i = 0;i < 10;i++) {
-        const oneRow = <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        const oneRow = <tr className="bg-mute-grey border-b border-mute-black">
+            <th scope="row" className="px-6 py-4 font-medium text-white whitespace-nowrap hover:text-basically-white">
                 <Link href="/novel-homepage">Charlie and the Chocolate Factory</Link>
             </th>
-            <td className="px-6 py-4">
+            <td className="px-6 py-4 text-white hover:text-basically-white">
                 <Link href="/novel-chapter">{`c${10 - i}`}</Link>
             </td>
-            <td className="px-6 py-4">
+            <td className="px-6 py-4 text-white">
             Roald Dahl
             </td>
-            <td className="px-6 py-4">
+            <td className="px-6 py-4 text-white">
             192
             </td>
         </tr>;
@@ -35,7 +35,7 @@ function carouselImages(): ReactElement {
     const images: JSX.Element[] = [];
     for (let i = 0;i < 5;i++) {
         const oneImage = <Link href="/novel-homepage">
-            <div className="flex h-full bg-gray-600 dark:bg-gray-800 dark:text-white grid grid-cols-5">
+            <div className="flex h-full bg-mute-black grid grid-cols-5">
                 <Image className="rounded-lg" src="/no-cover.png" alt="" height="384" width="256" />
 
                 <div className="col-start-2 col-span-3 pt-8">
@@ -70,12 +70,12 @@ function carouselImages(): ReactElement {
 
                 <div className="col-span-1 pt-8">
                     <div className="flex flex-wrap">
-                        <span className="bg-gray-100 text-gray-800 text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Action</span>
-                        <span className="bg-gray-100 text-gray-800 text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Adventure</span>
-                        <span className="bg-gray-100 text-gray-800 text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Horror</span>
-                        <span className="bg-gray-100 text-gray-800 text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Thriller</span>
-                        <span className="bg-gray-100 text-gray-800 text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Mystery</span>
-                        <span className="bg-gray-100 text-gray-800 text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Sci-Fi</span>
+                        <span className="bg-greyish text-white text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Action</span>
+                        <span className="bg-greyish text-white text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Adventure</span>
+                        <span className="bg-greyish text-white text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Horror</span>
+                        <span className="bg-greyish text-white text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Thriller</span>
+                        <span className="bg-greyish text-white text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Mystery</span>
+                        <span className="bg-greyish text-white text-md font-medium mt-2 mr-2 px-4 py-1 rounded dark:bg-gray-700 dark:text-gray-300">Sci-Fi</span>
                     </div>
                 </div>
             </div>
@@ -98,10 +98,10 @@ export default function Home(): ReactElement {
                 </div>
             </div>
 
-            <div className="pt-10">
+            <div className="pt-10 pb-10">
                 <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <table className="w-full text-sm text-left text-white">
+                        <thead className="text-xs border-b border-basically-white text-white uppercase bg-mute-black">
                             <tr>
                                 <th scope="col" className="px-6 py-3">
                                     Title
