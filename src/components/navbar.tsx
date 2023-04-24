@@ -22,7 +22,7 @@ export default function Navbar(): ReactElement {
         setDropdown(new Dropdown(avaDropRef.current, avaDropButtonRef.current, {}));
     }, [avaDropRef, avaDropButtonRef, dropdown, session?.user]);
 
-    return (<nav className="bg-mute-black px-2 sm:px-4 py-2.5 shadow mb-2">
+    return (<nav className="bg-mute-black px-2 sm:px-4 py-2.5 shadow ">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
             <Link href="/" className="flex items-center">
                 <Image
