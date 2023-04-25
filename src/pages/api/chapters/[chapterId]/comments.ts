@@ -17,10 +17,10 @@ export default async function handler(
     res: NextApiResponse,
 ): Promise<NextApiResponse | boolean> {
     const {chapterId} = req.query;
-    if (!chapterId || isNaN(Number(chapterId)) || Array.isArray(chapterId)) return res.status(500).write("No chapterId");
+    if (!chapterId || isNaN(Number(chapterId)) || Array.isArray(chapterId)) return res.status(500).end("No chapterId");
 
     const session = await getServerSession(req, res, authOptions);
-    if (!session) return res.status(401).write("Unauthenticated");
+    if (!session) return res.status(401).end("Unauthenticated");
 
     if (req.method !== "POST") return res.status(405);
 

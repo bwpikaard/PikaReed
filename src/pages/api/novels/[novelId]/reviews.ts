@@ -19,10 +19,10 @@ export default async function handler(
     res: NextApiResponse,
 ): Promise<NextApiResponse | boolean> {
     const {novelId} = req.query;
-    if (!novelId || isNaN(Number(novelId)) || Array.isArray(novelId)) return res.status(500).write("No novelId");
+    if (!novelId || isNaN(Number(novelId)) || Array.isArray(novelId)) return res.status(500).end("No novelId");
 
     const session = await getServerSession(req, res, authOptions);
-    if (!session) return res.status(401).write("Unauthenticated");
+    if (!session) return res.status(401).end("Unauthenticated");
 
     if (req.method !== "POST") return res.status(405);
 
@@ -38,7 +38,7 @@ export default async function handler(
             novelId: Number(novelId),
         },
     });
-    if (oldReview) return res.status(400).write("User already wrote a review");
+    if (oldReview) return res.status(400).end("User already wrote a review");
 
     const review = reviewRepo.create({
         title: body.data.title,

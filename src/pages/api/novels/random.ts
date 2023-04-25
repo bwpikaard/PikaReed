@@ -21,7 +21,7 @@ export default async function handler(
         .getOne();
 
     if (!randomNovel) {
-        res.status(400).write("Unable to find novel");
+        res.status(400).end("Unable to find novel");
         return;
     }
 

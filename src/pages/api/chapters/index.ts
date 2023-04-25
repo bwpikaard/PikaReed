@@ -20,7 +20,7 @@ export default async function handler(
     res: NextApiResponse,
 ): Promise<NextApiResponse | boolean> {
     const session = await getServerSession(req, res, authOptions);
-    if (!session) return res.status(401).write("Unauthenticated");
+    if (!session) return res.status(401).end("Unauthenticated");
 
     if (req.method !== "POST") return res.status(405);
 
@@ -31,8 +31,8 @@ export default async function handler(
     const novelRepo = ds.getRepository(Novel);
 
     const novel = await novelRepo.findOne({where: {id: body.data.novelId} });
-    if (!novel) return res.status(400).write("No novelId");
-    if (novel.authorId !== session?.user.id) return res.status(400).write("Not author of novel");
+    if (!novel) return res.status(400).end("No novelId");
+    if (novel.authorId !== session?.user.id) return res.status(400).end("Not author of novel");
 
     const chapterRepo = ds.getRepository(NovelChapter);
 

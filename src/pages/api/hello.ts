@@ -14,7 +14,7 @@ export default async function handler(
     const session = await getServerSession(req, res, authOptions);
 
     if (!session) {
-        res.status(401).write("Unauthenticated");
+        res.status(401).end("Unauthenticated");
         return;
     }
 

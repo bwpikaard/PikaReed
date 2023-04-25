@@ -14,7 +14,7 @@ export default async function handler(
     const {novelId} = req.query;
 
     if (!novelId || isNaN(Number(novelId)) || Array.isArray(novelId)) {
-        res.status(500).write("No novelId");
+        res.status(500).end("No novelId");
         return;
     }
 
@@ -45,7 +45,7 @@ export default async function handler(
     });
 
     if (novel.status !== NovelStatus.Published && novel.authorId !== session?.user.id) {
-        res.status(400).write("Cannot access novel");
+        res.status(400).end("Cannot access novel");
         return;
     }
 

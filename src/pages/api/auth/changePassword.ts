@@ -18,26 +18,27 @@ export default async function handler(
     res: NextApiResponse,
 ): Promise<NextApiResponse | boolean> {
     const session = await getServerSession(req, res, authOptions);
-    if (!session) return res.status(401).write("Unauthenticated");
+    if (!session) return res.status(401).end("Unauthenticated");
 
-    if (req.method !== "POST") return res.status(405);
+    if (req.method !== "POST") return res.status(405).end("Bad method");
 
     const body = bodySchema.safeParse(req.body);
-    if (!body.success) return res.status(400);
+    if (!body.success) return res.status(400).end("Failed to parse body");
     
-    if (body.data.newPassword !== body.data.confirmedPassword) return res.status(400);
+    if (body.data.newPassword !== body.data.confirmedPassword) return res.status(400).end("Passwords don't match");
 
     const ds = await ReadyDataSource();
     const userRepo = ds.getRepository(User);
 
-    let user = await userRepo.findOne({where: {id: session.user.id}, select: {password: true} });
-    if (!user) return res.status(400).write("No user logged in");
-    if (!await compare(body.data.currentPassword, user.password)) return res.status(400).write("Incorrect Password");
+    let user = await userRepo.findOne({where: {id: session.user.id} });
+    const userPassword = await userRepo.findOne({where: {id: session.user.id}, select: {password: true} });
+    if (!user || !userPassword) return res.status(400).end("No user logged in");
+    if (!await compare(body.data.currentPassword, userPassword.password)) return res.status(400).end("Incorrect password");
 
     user = userRepo.merge(user, {
         password: await hash(body.data.newPassword, 10),
     });
     await userRepo.save(user);
 
-    return res.status(200);
+    return res.status(200).end("Done");
 }

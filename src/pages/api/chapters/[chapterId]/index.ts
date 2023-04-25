@@ -19,7 +19,7 @@ export default async function handler(
     const {chapterId} = req.query;
 
     if (!chapterId || isNaN(Number(chapterId)) || Array.isArray(chapterId)) {
-        res.status(500).write("No chapterId");
+        res.status(500).end("No chapterId");
         return;
     }
 
@@ -39,14 +39,14 @@ export default async function handler(
 
     if (req.method === "GET") {
         if (chapter.novel.status !== NovelStatus.Published && chapter.novel.authorId !== session?.user.id) {
-            res.status(400).write("Cannot access chapter");
+            res.status(400).end("Cannot access chapter");
             return;
         }
     
         res.status(200).json(chapter);
     } else if (req.method === "PATCH") {
         if (chapter.novel.authorId !== session?.user.id) {
-            res.status(400).write("Cannot access chapter");
+            res.status(400).end("Cannot access chapter");
             return;
         }
         
