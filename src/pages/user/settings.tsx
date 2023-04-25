@@ -48,7 +48,7 @@ export default function Settings(): ReactElement {
 
             <div className="grid grid-cols-12">
                 <aside id="default-sidebar" className="self-start col-span-1 top-0 left-0 z-40 w-52 transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-                    <div className="h-full px-3 py-4 overflow-y-auto bg-mute-black">
+                    <div className="h-full px-3 py-4 overflow-y-auto bg-mute-black rounded-b-lg">
                         <ul className="space-y-2">
                             <li>
                                 <button onClick={settingsDisplay} className="flex items-center p-2 text-base font-normal text-white rounded-lg hover:text-basically-white">

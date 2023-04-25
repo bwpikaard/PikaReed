@@ -15,11 +15,11 @@ export default function SignIn({csrfToken}: InferGetServerSidePropsType<typeof g
                             <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
                             <div>
                                 <label htmlFor="text" className="block mb-2 text-sm font-medium text-white">Username</label>
-                                <input type="text" name="username" id="username" className="bg-mute-grey border border-white text-white sm:text-sm rounded-lg focus:ring-basically-white focus:border-basically-white block w-full p-2.5" required={true} />
+                                <input type="text" name="username" id="username" className="bg-mute-grey border border-greyish text-white sm:text-sm rounded-lg focus:ring-basically-white focus:border-basically-white block w-full p-2.5" required={true} />
                             </div>
                             <div>
                                 <label htmlFor="password" className="block mb-2 text-sm font-medium text-white">Password</label>
-                                <input type="password" name="password" id="password" className="bg-mute-grey border border-white text-white sm:text-sm rounded-lg focus:ring-basically-white focus:border-basically-white block w-full p-2.5" required={true} />
+                                <input type="password" name="password" id="password" className="bg-mute-grey border border-greyish text-white sm:text-sm rounded-lg focus:ring-basically-white focus:border-basically-white block w-full p-2.5" required={true} />
                             </div>
                             <button type="submit" className="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-greyish rounded-lg focus:ring-4 focus:ring-basically-white hover:text-basically-white">
                                     Sign in
