@@ -12,6 +12,7 @@ import {NovelReview} from "./entities/novel-review.entity";
 import {Role} from "./entities/role.entity";
 import {Tag} from "./entities/tag.entity";
 import {User} from "./entities/user.entity";
+import {UserSavedNovel} from "./entities/user-saved-novel.entity";
 
 export const DataSource = new ORMDataSource({
     type: "postgres",
@@ -21,7 +22,7 @@ export const DataSource = new ORMDataSource({
     password: config.get("database.password"),
     database: config.get("database.database"),
     schema: "public",
-    entities: [Action, NovelChapter, NovelComment, NovelReview, Novel, Role, Tag, User, FeedbackSubmission],
+    entities: [Action, NovelChapter, NovelComment, NovelReview, Novel, Role, Tag, User, FeedbackSubmission, UserSavedNovel],
 });
 
 export async function ReadyDataSource(): Promise<ORMDataSource> {
