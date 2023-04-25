@@ -9,6 +9,7 @@ import {FeedbackSubmission} from "./entities/feedback.entity";
 import {Novel} from "./entities/novel.entity";
 import {NovelChapter} from "./entities/novel-chapter.entity";
 import {NovelReview} from "./entities/novel-review.entity";
+import {NovelView} from "./entities/novel-view.entity";
 import {Role} from "./entities/role.entity";
 import {Tag} from "./entities/tag.entity";
 import {User} from "./entities/user.entity";
@@ -22,7 +23,19 @@ export const DataSource = new ORMDataSource({
     password: config.get("database.password"),
     database: config.get("database.database"),
     schema: "public",
-    entities: [Action, NovelChapter, ChapterComment, NovelReview, Novel, Role, Tag, User, FeedbackSubmission, UserSavedNovel],
+    entities: [
+        Action,
+        NovelChapter,
+        ChapterComment,
+        NovelReview,
+        Novel,
+        Role,
+        Tag,
+        User,
+        FeedbackSubmission,
+        UserSavedNovel,
+        NovelView,
+    ],
 });
 
 export async function ReadyDataSource(): Promise<ORMDataSource> {

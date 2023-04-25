@@ -3,6 +3,7 @@ import {getServerSession} from "next-auth";
 
 import {ReadyDataSource} from "@/data-source";
 import {NovelStatus} from "@/entities/novel-status.enum";
+import {NovelView} from "@/entities/novel-view.entity";
 
 import {Novel} from "../../../../entities/novel.entity";
 import {authOptions} from "../../auth/[...nextauth]";
@@ -22,6 +23,7 @@ export default async function handler(
 
     const ds = await ReadyDataSource();
     const novelRepo = ds.getRepository(Novel);
+    const novelViewRepo = ds.getRepository(NovelView);
     
     const novel = await novelRepo.findOneOrFail({
         where: {
@@ -47,6 +49,22 @@ export default async function handler(
     if (novel.status !== NovelStatus.Published && novel.authorId !== session?.user.id) {
         res.status(400).end("Cannot access novel");
         return;
+    }
+
+    if (session?.user.id) {
+        const view = await novelViewRepo.findOne({
+            where: {
+                userId: session.user.id,
+                novelId: novel.id,
+            },
+        });
+        if (!view) {
+            const newView = novelViewRepo.create({
+                userId: session.user.id,
+                novelId: novel.id,
+            });
+            await novelViewRepo.save(newView);
+        }
     }
 
     res.status(200).json(novel);
