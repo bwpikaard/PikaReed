@@ -8,9 +8,15 @@ import {NovelChapter} from "./novel-chapter.entity";
 import {User} from "./user.entity";
 
 @Entity()
-export class NovelComment extends BaseEntity {
+export class ChapterComment extends BaseEntity {
+    @Column({type: "int"})
+    userId: number;
+    
     @ManyToOne(() => User)
     user: User;
+
+    @Column({type: "int"})
+    chapterId: number;
 
     @ManyToOne(() => NovelChapter)
     chapter: NovelChapter;
@@ -18,11 +24,11 @@ export class NovelComment extends BaseEntity {
     @Column({type: "int"})
     parentId: number;
 
-    @ManyToOne(() => NovelComment, {nullable: true})
-    parent: NovelComment;
+    @ManyToOne(() => ChapterComment, {nullable: true})
+    parent: ChapterComment;
 
-    @OneToMany("NovelComment", "parent")
-    children: Array<Relation<NovelComment>>;
+    @OneToMany("ChapterComment", "parent")
+    children: Array<Relation<ChapterComment>>;
 
     @Column()
     comment: string;

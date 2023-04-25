@@ -4,10 +4,10 @@ import {DataSource as ORMDataSource} from "typeorm";
 
 import {Action} from "./entities/action.entity";
 import type {BaseEntity} from "./entities/base-entity";
+import {ChapterComment} from "./entities/chapter-comment.entity";
 import {FeedbackSubmission} from "./entities/feedback.entity";
 import {Novel} from "./entities/novel.entity";
 import {NovelChapter} from "./entities/novel-chapter.entity";
-import {NovelComment} from "./entities/novel-comment.entity";
 import {NovelReview} from "./entities/novel-review.entity";
 import {Role} from "./entities/role.entity";
 import {Tag} from "./entities/tag.entity";
@@ -22,7 +22,7 @@ export const DataSource = new ORMDataSource({
     password: config.get("database.password"),
     database: config.get("database.database"),
     schema: "public",
-    entities: [Action, NovelChapter, NovelComment, NovelReview, Novel, Role, Tag, User, FeedbackSubmission, UserSavedNovel],
+    entities: [Action, NovelChapter, ChapterComment, NovelReview, Novel, Role, Tag, User, FeedbackSubmission, UserSavedNovel],
 });
 
 export async function ReadyDataSource(): Promise<ORMDataSource> {

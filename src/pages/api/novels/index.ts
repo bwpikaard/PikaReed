@@ -17,7 +17,20 @@ export default async function handler(
 
     if (typeof search === "string") {
         const all = await getSimilar(Novel, search, "title", 0.15);
-        res.status(200).json(all);
+        const novels = await novelRepo.find({
+            where: {id: In(all.map(n => n.id))},
+            relations: {
+                tags: true,
+                reviews: true,
+                chapters: true,
+                author: {
+                    roles: true,
+                },
+            },
+            take: 20,
+        });
+
+        res.status(200).json(novels);
     } else if (typeof tags === "string") {
         const tagRepo = ds.getRepository(Tag);
 
@@ -30,6 +43,9 @@ export default async function handler(
                     tags: true,
                     reviews: true,
                     chapters: true,
+                    author: {
+                        roles: true,
+                    },
                 },
             },
         });
@@ -47,6 +63,9 @@ export default async function handler(
                 tags: true,
                 reviews: true,
                 chapters: true,
+                author: {
+                    roles: true,
+                },
             },
             take: 20,
         });
