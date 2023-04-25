@@ -24,6 +24,9 @@ export class Novel extends BaseEntity {
     @Column()
     synopsis: string;
 
+    @Column({default: false})
+    featured: boolean;
+
     @Column({type: "enum", enum: NovelStatus})
     status: NovelStatus;
 
