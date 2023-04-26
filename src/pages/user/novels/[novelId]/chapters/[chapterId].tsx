@@ -73,7 +73,7 @@ export default function UserNovelChapter(): ReactElement {
                         <div className="flex justify-between items-center mb-6">
                             <h2 className="text-lg lg:text-2xl font-bold text-white">Suggestions</h2>
                         </div>
-                        {chapter.comments.map(c => (
+                        {chapter.suggestions.map(c => (
                             <article className="p-6 mb-6 text-base bg-mute-black rounded-lg" key={c.id}>
                                 <footer className="flex justify-between items-center mb-2">
                                     <div className="flex items-center">
