@@ -1,20 +1,25 @@
-import Image from "next/image";
 import Link from "next/link";
 import type {ReactElement} from "react";
+import useSWR from "swr";
+
+import type {Novel} from "../../entities/novel.entity";
+import {fetcher} from "../../lib/swrFetcher";
+import {NovelCard} from "../novel-card";
 
 export default function MyNovels(): ReactElement {
+    const {data: novels, error: novelsError} = useSWR<Novel[], Error>("/api/novels/own", fetcher);
+
+    if (!novels || novelsError) return <div>Loading...</div>;
+
     return (
         <>
-            <div className="flex justify-end flex-wrap">
-                <button type="button" className="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center mr-3 mb-3 dark:text-white dark:focus:ring-gray-800">Create Novel</button>
+            <div className="pt-10 pb-3">
+                <Link href="../../create-novel" className="justify-start">
+                    <p className="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white border border-white bg-mute-black rounded-lg focus:ring-4 focus:ring-basically-white hover:text-basically-white">Create Novel</p>
+                </Link>
             </div>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 flex justify-center flex-wrap">
-                <Link href="/">
-                    <Image data-popover-target="popover-no-arrow" data-popover-placement="bottom" className="rounded-lg" src="/no-cover.png" alt="" height="384" width="256" />
-                </Link>
-                <Link href="/">
-                    <Image data-popover-target="popover-no-arrow" data-popover-placement="bottom" className="rounded-lg" src="/no-cover.png" alt="" height="384" width="256" />
-                </Link>
+            <div>
+                {novels.map(n => (<NovelCard novel={n} key={n.id} basePath="/user/novels/" />))}
             </div>
         </>
     );

@@ -9,7 +9,7 @@ export default function Layout({
     children: ReactNode;
 }): ReactElement {
     return (
-        <main>
+        <main className="bg-greyish">
             <div className="flex flex-col min-h-screen">
                 <NavBar />
                 <div className="container mx-auto flex-grow">
