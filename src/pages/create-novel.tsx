@@ -39,15 +39,14 @@ export default function CreateNovel(): ReactElement {
                 <div className="col-span-2 col-start-2 pt-5 text-white">
                     Available Tags: <br/>
                     Action | Adventure | Horror | Mystery | Sci-Fi | Thriller | Non-Fiction | Fantasy <br/>
-                    Seperate all tags with a comma and no spaces. Ex: Action,Adventure,Mystery
                 </div>
                 <div className="col-span-2 col-start-2 pt-5">
                     <label htmlFor="tags" className="block mb-2 text-sm font-medium text-white">Tags</label>
-                    <input type="text" id="tags" className="block p-3 w-full text-sm text-white bg-mute-black rounded-lg border border-white shadow-sm focus:ring-basically-white focus:border-basically-white" placeholder="Let us know how we can help you" required onChange={e => { setTags(e.target.value) }} />
+                    <input type="text" id="tags" className="block p-3 w-full text-sm text-white bg-mute-black rounded-lg border border-white shadow-sm focus:ring-basically-white focus:border-basically-white" placeholder="Seperate all tags with a comma and no spaces. Ex: Action,Adventure,Mystery" required onChange={e => { setTags(e.target.value) }} />
                 </div>
                 <div className="pt-5 col-start-2">
                     <button type="submit" className="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-mute-black rounded-lg focus:ring-4 focus:ring-basically-white hover:text-basically-white">
-                        Send feedback
+                        Create Novel
                     </button>
                 </div>
             </form>
