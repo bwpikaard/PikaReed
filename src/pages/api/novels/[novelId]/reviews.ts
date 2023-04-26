@@ -24,10 +24,10 @@ export default async function handler(
     const session = await getServerSession(req, res, authOptions);
     if (!session) return res.status(401).end("Unauthenticated");
 
-    if (req.method !== "POST") return res.status(405);
-
+    if (req.method !== "POST") return res.status(405).end("Invalid method");
+    
     const body = bodySchema.safeParse(req.body);
-    if (!body.success) return res.status(400);
+    if (!body.success) return res.status(400).end("Failed to parse body");
 
     const ds = await ReadyDataSource();
     const reviewRepo = ds.getRepository(NovelReview);
@@ -43,10 +43,11 @@ export default async function handler(
     const review = reviewRepo.create({
         title: body.data.title,
         comment: body.data.comment,
+        rating: body.data.rating,
         novelId: Number(novelId),
         userId: session.user.id,
     });
     await reviewRepo.save(review);
 
-    return res.status(200);
+    return res.status(200).end("Done");
 }

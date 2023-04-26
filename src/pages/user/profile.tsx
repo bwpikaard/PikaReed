@@ -8,12 +8,7 @@ import MyNovels from "../../components/profile-tabs/my-novels";
 import MyReviews from "../../components/profile-tabs/my-reviews";
 
 export default function Profile(): ReactElement {
-
-    const [check, setPage] = useState<"com" | "nov" | "rev">();
-
-    if (check === undefined) {
-        setPage("nov");
-    }
+    const [check, setPage] = useState<"com" | "nov" | "rev">("nov");
 
     const commentsDisplay = (): void => {
         setPage("com");

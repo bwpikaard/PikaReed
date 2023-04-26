@@ -9,6 +9,7 @@ import {NovelStatus} from "@/entities/novel-status.enum";
 import {authOptions} from "../../auth/[...nextauth]";
 
 const bodySchema = z.object({
+    title: z.string(),
     htmlBody: z.string(),
 });
 
@@ -34,6 +35,14 @@ export default async function handler(
         },
         relations: {
             novel: true,
+            comments: {
+                user: {
+                    roles: true,
+                },
+            },
+            suggestions: {
+                user: true,
+            },
         },
     });
 
@@ -57,6 +66,7 @@ export default async function handler(
         }
 
         const newChapter = chapterRepo.merge(chapter, {
+            title: body.data.title,
             htmlBody: body.data.htmlBody,
         });
         await chapterRepo.save(newChapter);

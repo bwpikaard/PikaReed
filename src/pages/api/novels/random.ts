@@ -31,6 +31,8 @@ export default async function handler(
             tags: true,
             reviews: true,
             chapters: true,
+            views: true,
+            saves: true,
         },
     });
 

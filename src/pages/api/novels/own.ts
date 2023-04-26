@@ -1,21 +1,24 @@
 import type {NextApiRequest, NextApiResponse} from "next";
+import {getServerSession} from "next-auth";
 
 import {ReadyDataSource} from "@/data-source";
 
 import {Novel} from "../../../entities/novel.entity";
-import {NovelStatus} from "../../../entities/novel-status.enum";
+import {authOptions} from "../auth/[...nextauth]";
 
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<Novel[]>,
-): Promise<void> {
+): Promise<NextApiResponse | boolean> {
+    const session = await getServerSession(req, res, authOptions);
+    if (!session) return res.status(400).end("Unauthorized");
+
     const ds = await ReadyDataSource();
     const novelRepo = ds.getRepository(Novel);
 
     const novels = await novelRepo.find({
         where: {
-            status: NovelStatus.Published,
-            featured: true,
+            authorId: session.user.id,
         },
         relations: {
             tags: true,
@@ -27,8 +30,8 @@ export default async function handler(
             views: true,
             saves: true,
         },
-        take: 5,
     });
 
     res.status(200).json(novels);
+    return res;
 }

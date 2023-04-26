@@ -33,7 +33,7 @@ export default async function handler(
         return res;
     } else if (req.method === "POST") {
         const body = bodySchema.safeParse(req.body);
-        if (!body.success) return res.status(400);
+        if (!body.success) return res.status(400).end("Failed to parse body");
     
         const submission = feedbackRepo.create({
             email: body.data.email,
@@ -42,8 +42,8 @@ export default async function handler(
         });
         await feedbackRepo.save(submission);
 
-        return res.status(200);
+        return res.status(200).end("Done");
     }
 
-    return res.status(403);
+    return res.status(403).end("Invalid method");
 }

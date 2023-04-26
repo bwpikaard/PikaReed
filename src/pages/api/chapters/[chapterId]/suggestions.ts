@@ -2,14 +2,12 @@ import type {NextApiRequest, NextApiResponse} from "next";
 import {getServerSession} from "next-auth";
 import {z} from "zod";
 
-import {ChapterComment} from "@/entities/chapter-comment.entity";
-
 import {ReadyDataSource} from "../../../../data-source";
+import {ChapterSuggestion} from "../../../../entities/chapter-suggestion.entity";
 import {authOptions} from "../../auth/[...nextauth]";
 
 const bodySchema = z.object({
     comment: z.string(),
-    parentId: z.number().optional(),
 });
 
 export default async function handler(
@@ -28,13 +26,12 @@ export default async function handler(
     if (!body.success) return res.status(400).end("Failed to parse body");
 
     const ds = await ReadyDataSource();
-    const commentRepo = ds.getRepository(ChapterComment);
+    const commentRepo = ds.getRepository(ChapterSuggestion);
 
     const comment = commentRepo.create({
         userId: session.user.id,
         chapterId: Number(chapterId),
         comment: body.data.comment,
-        parentId: body.data.parentId,
     });
     await commentRepo.save(comment);
 

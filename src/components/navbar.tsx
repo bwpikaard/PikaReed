@@ -1,17 +1,23 @@
 import {Dropdown} from "flowbite";
 import Image from "next/image";
 import Link from "next/link";
+import {useRouter} from "next/router";
 import {
     signIn, signOut, useSession,
 } from "next-auth/react";
-import type {ReactElement} from "react";
+import type {FormEvent, ReactElement} from "react";
 import {
     createRef, useEffect, useState,
 } from "react";
 
+import {fetcher} from "../lib/swrFetcher";
+
 export default function Navbar(): ReactElement {
+    const router = useRouter();
     const {data: session} = useSession();
     const [dropdown, setDropdown] = useState<Dropdown>();
+    
+    const [searchValue, setSearchValue] = useState<string>();
 
     const avaDropRef = createRef<HTMLDivElement>();
     const avaDropButtonRef = createRef<HTMLButtonElement>();
@@ -22,26 +28,29 @@ export default function Navbar(): ReactElement {
         setDropdown(new Dropdown(avaDropRef.current, avaDropButtonRef.current, {}));
     }, [avaDropRef, avaDropButtonRef, dropdown, session?.user]);
 
+    async function getRandomNovel(): Promise<void> {
+        await fetcher("/api/novels/random").then(async novel => router.push(`/novels/${novel.id}`));
+    }
+
+    async function search(e: FormEvent): Promise<void> {
+        e.preventDefault();
+
+        await router.push(searchValue?.length ? `/explore/library?search=${encodeURIComponent(searchValue)}` : "/explore/library");
+    }
+
     return (<nav className="bg-mute-black px-2 sm:px-4 py-2.5 shadow ">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
             <Link href="/" className="flex items-center">
-                <Image
-                    src="/pikareed-logo.ico"
-                    className="mr-3 h-6 sm:h-9"
-                    alt="PikaReed Logo"
-                    height="36"
-                    width="24"
-                />
                 <span className="text-white text-center self-center text-4xl tracking-tight font-extrabold whitespace-nowrap">PikaReed</span>
             </Link>
             <div className="flex items-center md:order-2">
-                <form className="">
+                <form onSubmit={search}>
                     <label htmlFor="default-search" className="mb-2 text-sm font-medium text-white sr-only">Search</label>
                     <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                             <svg aria-hidden="true" className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                         </div>
-                        <input type="search" id="default-search" className="text-white block w-96 p-4 pl-10 text-sm border border-greyish rounded-lg bg-mute-grey focus:ring-basically-white focus:border-blue-500 placeholder-white" placeholder="Search by Novel..." required />
+                        <input type="search" id="default-search" className="text-white block w-96 p-4 pl-10 text-sm border border-greyish rounded-lg bg-mute-grey focus:ring-basically-white focus:border-blue-500 placeholder-white" placeholder="Search by Novel..." onChange={e => { setSearchValue(e.target.value) }} />
                         <button type="submit" className="text-white absolute right-2.5 bottom-2.5 bg-greyish hover:text-basically-white focus:ring-4 focus:outline-none focus:ring-basically-white font-medium rounded-lg text-sm px-4 py-2">Search</button>
                     </div>
                 </form>
@@ -116,13 +125,13 @@ export default function Navbar(): ReactElement {
                                     <Link href="/explore/library" className="block px-4 py-2 hover:text-basically-white">Library</Link>
                                 </li>
                                 <li>
-                                    <Link href="/explore/random" className="block px-4 py-2 hover:text-basically-white">Random</Link>
+                                    <Link href="#" className="block px-4 py-2 hover:text-basically-white" onClick={getRandomNovel}>Random</Link>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li>
-                        <Link href="/write" className="block py-2 pl-3 pr-4 text-white rounded hover:text-basically-white md:hover:bg-transparent md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Write</Link>
+                        <Link href="/user/profile" className="block py-2 pl-3 pr-4 text-white rounded hover:text-basically-white md:hover:bg-transparent md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Write</Link>
                     </li>
                     <li>
                         <Link href="/resources" className="block py-2 pl-3 pr-4 text-white rounded hover:text-basically-white md:hover:bg-transparent md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Resources</Link>

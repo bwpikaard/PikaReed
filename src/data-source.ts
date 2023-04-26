@@ -5,6 +5,7 @@ import {DataSource as ORMDataSource} from "typeorm";
 import {Action} from "./entities/action.entity";
 import type {BaseEntity} from "./entities/base-entity";
 import {ChapterComment} from "./entities/chapter-comment.entity";
+import {ChapterSuggestion} from "./entities/chapter-suggestion.entity";
 import {FeedbackSubmission} from "./entities/feedback.entity";
 import {Novel} from "./entities/novel.entity";
 import {NovelChapter} from "./entities/novel-chapter.entity";
@@ -13,6 +14,7 @@ import {NovelView} from "./entities/novel-view.entity";
 import {Role} from "./entities/role.entity";
 import {Tag} from "./entities/tag.entity";
 import {User} from "./entities/user.entity";
+import {UserChapterBookmark} from "./entities/user-chapter-bookmark.entity";
 import {UserSavedNovel} from "./entities/user-saved-novel.entity";
 
 export const DataSource = new ORMDataSource({
@@ -27,6 +29,7 @@ export const DataSource = new ORMDataSource({
         Action,
         NovelChapter,
         ChapterComment,
+        ChapterSuggestion,
         NovelReview,
         Novel,
         Role,
@@ -35,6 +38,7 @@ export const DataSource = new ORMDataSource({
         FeedbackSubmission,
         UserSavedNovel,
         NovelView,
+        UserChapterBookmark,
     ],
 });
 

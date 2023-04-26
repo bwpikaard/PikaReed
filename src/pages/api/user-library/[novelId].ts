@@ -35,7 +35,7 @@ export default async function handler(
         });
         await libraryRepo.save(newSave);
 
-        return res.status(200).end("Sabed");
+        return res.status(200).end("Saved");
     } else if (req.method === "DELETE") {
         const save = await libraryRepo.findOne({
             where: {
@@ -43,14 +43,14 @@ export default async function handler(
                 userId: session.user.id,
             },
         });
-        if (save) return res.status(200).end("Not saved");
+        if (!save) return res.status(200).end("Not saved");
         await libraryRepo.delete({
             novelId: Number(novelId),
             userId: session.user.id,
         });
 
-        return res.status(200);
+        return res.status(200).end("Done");
     }
 
-    return res.status(403);
+    return res.status(403).end("Bad method");
 }

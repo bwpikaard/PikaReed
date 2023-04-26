@@ -5,6 +5,7 @@ import {
 
 import {BaseEntity} from "./base-entity";
 import type {ChapterComment} from "./chapter-comment.entity";
+import type {ChapterSuggestion} from "./chapter-suggestion.entity";
 import {Novel} from "./novel.entity";
 
 @Entity()
@@ -26,4 +27,7 @@ export class NovelChapter extends BaseEntity {
 
     @OneToMany("ChapterComment", "chapter")
     comments: Array<Relation<ChapterComment>>;
+
+    @OneToMany("ChapterSuggestion", "chapter")
+    suggestions: Array<Relation<ChapterSuggestion>>;
 }

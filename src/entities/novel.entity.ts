@@ -10,6 +10,7 @@ import {NovelStatus} from "./novel-status.enum";
 import type {NovelView} from "./novel-view.entity";
 import type {Tag} from "./tag.entity";
 import {User} from "./user.entity";
+import type {UserSavedNovel} from "./user-saved-novel.entity";
 
 @Entity()
 export class Novel extends BaseEntity {
@@ -43,4 +44,7 @@ export class Novel extends BaseEntity {
 
     @OneToMany("NovelView", "novel")
     views: Array<Relation<NovelView>>;
+
+    @OneToMany("UserSavedNovel", "novel")
+    saves: Array<Relation<UserSavedNovel>>;
 }

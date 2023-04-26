@@ -1,28 +1,13 @@
 import type {ReactElement} from "react";
+import useSWR from "swr";
+
+import type {FeedbackSubmission} from "../entities/feedback.entity";
+import {fetcher} from "../lib/swrFetcher";
 
 export default function Feedback(): ReactElement {
-    function tableRows(): ReactElement {
-        // eslint-disable-next-line no-undef
-        const rows: JSX.Element[] = [];
-        for (let i = 0;i < 10;i++) {
-            const oneRow = <tr className="bg-mute-grey border-b border-basically-white">
-                <th scope="row" className="px-6 py-4 font-medium text-white whitespace-nowrap">
-                    creeder3@my.apsu.edu
-                </th>
-                <td className="px-6 py-4 text-white">
-                    A bunch of subject materialA bunch of subject material
-                </td>
-                <td className="px-6 py-4 text-white">
-                    This would be where the message is an will need to be quite longThis would be where the message is an will need to be quite longThis would be where the message is an will need to be quite longThis would be where the message is an will need to be quite longThis would be where the message is an will need to be quite longThis would be where the message is an will need to be quite longThis would be where the message is an will need to be quite longThis would be where the message is an will need to be quite longThis would be where the message is an will need to be quite long
-                </td>
-                <td className="px-6 py-4 text-white">
-                    <button type="button" className="hover:text-basically-white">Delete</button>
-                </td>
-            </tr>;
-            rows.push(oneRow);
-        }
-        return <tbody>{rows}</tbody>;
-    }
+    const {data: feedback, error: feedbackError} = useSWR<FeedbackSubmission[], Error>("/api/feedback", fetcher);
+
+    if (!feedback || feedbackError) return <div>Loading...</div>;
 
     return (
         <>
@@ -40,12 +25,22 @@ export default function Feedback(): ReactElement {
                                 <th scope="col" className="px-6 py-3">
                                     Message
                                 </th>
-                                <th scope="col" className="px-6 py-3">
-                                    Delete
-                                </th>
                             </tr>
                         </thead>
-                        {tableRows()}
+                        <tbody>
+                            {feedback.map(f => (
+                                <tr className="bg-mute-grey border-b border-basically-white" key={f.id}>
+                                    <th scope="row" className="px-6 py-4 font-medium text-white whitespace-nowrap">
+                                        {f.email}
+                                    </th>
+                                    <td className="px-6 py-4 text-white">
+                                        {f.subject}
+                                    </td>
+                                    <td className="px-6 py-4 text-white">
+                                        {f.body}
+                                    </td>
+                                </tr>))}
+                        </tbody>
                     </table>
                 </div>
             </div>
